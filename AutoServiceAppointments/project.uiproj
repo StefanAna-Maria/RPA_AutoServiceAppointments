@@ -1,0 +1,6 @@
+{
+  "Name": "AutoServiceAppointments",
+  "ProjectType": "Process",
+  "Description": "Automated assistant for managing auto service appointment requests",
+  "MainFile": "Main.xaml"
+}
