@@ -1,0 +1,13 @@
+﻿{
+  "Name": "AziASANA MARIA STEFA…",
+  "Type": "Element",
+  "Id": "ONFkYyNgEUeHoyeGI5_DAQ",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/ONFkYyNgEUeHoyeGI5_DAQ",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-08T14:41:35.8906087Z",
+  "Updated": "2026-01-08T14:41:35.8906087Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
