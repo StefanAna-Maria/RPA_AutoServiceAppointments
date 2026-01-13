@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Joi 08.01",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "J5WSGUZIxk2O_V5IP0l52Q",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/J5WSGUZIxk2O_V5IP0l52Q",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-12T23:23:16.2419243Z",
+  "Updated": "2026-01-12T23:23:16.2419243Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

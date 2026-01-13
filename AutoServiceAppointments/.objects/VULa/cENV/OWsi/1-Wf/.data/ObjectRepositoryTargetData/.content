@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="5SMqaTrbVU27EqSV_CHnsg" Reference="hRGZvbx-QUqDSvuFD_-Ygg/1-WfpToTiU-UUuxCT8NbOw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D" CVScreenId="059076c1-daf6-4223-8a96-34dd315cb5b1" CvElementArea="61, 267, 561, 326" CvType="Table" DesignTimeRectangle="63, 353, 538, 80" ElementType="CheckBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" Guid="d4516702-55e4-4c8c-aeb5-afa3fd21ae75" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="50c2f6ea98f83c898a35887b04dcdaf7.png" xmlns="">0Zp_SbVW4ME61UsloelcuGQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">ExtractDataGeneric</x:String>
+    <x:Null x:Key="NextLinkTarget" />
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Nume Georgescu Andrei …",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "zSKC7Rxo402lShF7Qd5hMQ",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/zSKC7Rxo402lShF7Qd5hMQ",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-09T15:17:57.5982994Z",
+  "Updated": "2026-01-09T15:17:57.5982994Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

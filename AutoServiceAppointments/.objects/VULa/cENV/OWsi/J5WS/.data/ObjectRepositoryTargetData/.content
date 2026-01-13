@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9FhiVBVfQkqgfZ83cE4rZw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D/id/AAQkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAQAAyLGmrBNq1GoIczRuP9U%2Fc%3D" CVScreenId="163a7d1e-df82-4a8e-9a6d-c975e57639e1" CvType="AnyWordGroup" DesignTimeRectangle="671, 383, 62, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='_rWRU Ejrkd qq2gS cbNn0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="49e3edf2-7d70-4cfa-89b8-541cf10bf222" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari -ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3fc009c3eb4aee8b9b7ad0e882bc8e4c.png" xmlns="">0fKsiYFUVgUOsdbLK51HPKw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
