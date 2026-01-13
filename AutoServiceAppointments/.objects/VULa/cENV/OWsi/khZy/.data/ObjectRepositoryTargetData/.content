@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ssmYp3OVqk2QXvctkPw_KA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D" CVScreenId="9fb9004b-9d9e-46cc-b0b5-75606f1ad237" CvType="AnyWordGroup" DesignTimeRectangle="131, 381, 123, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='TtcXM' tag='SPAN' /&gt;" Guid="48ab863b-b0bc-49a8-a76e-4544614cabd9" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Mail - ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="052e751c84c01d8418ab2efea41368db.png" xmlns="">0vJKrM1EqAEOl1UrAMkxNhQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "ANA MARIA STEFAN",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "PPo9LXC7qUK7r2gjlRnQHg",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/PPo9LXC7qUK7r2gjlRnQHg",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-09T15:17:18.7930512Z",
+  "Updated": "2026-01-09T15:17:18.7930512Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
