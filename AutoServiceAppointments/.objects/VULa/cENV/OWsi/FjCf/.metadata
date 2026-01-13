@@ -1,0 +1,14 @@
+﻿{
+  "Name": "ASANA MARIA STEFAN…(1)",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "FjCfAlvATkOzGjUz3ruaKA",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/FjCfAlvATkOzGjUz3ruaKA",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-13T00:46:58.1559889Z",
+  "Updated": "2026-01-13T00:46:58.1559889Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

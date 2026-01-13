@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome LemuMaster-RPA - Proiect RPA UiPath",
+  "Type": "App",
+  "Id": "4FrIQRVqvUaqdFgdrLnnYQ",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/4FrIQRVqvUaqdFgdrLnnYQ",
+  "Created": "2026-01-13T00:33:27.8159125Z",
+  "Updated": "2026-01-13T00:33:27.8159125Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
