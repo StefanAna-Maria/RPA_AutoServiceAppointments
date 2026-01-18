@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MzmiU7HUhEeecSan8Ht53Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D/id/AAQkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAQAAyLGmrBNq1GoIczRuP9U%2Fc%3D" DesignTimeRectangle="633, 409, 330, 94" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' parentid='focused' tag='DIV' /&gt;" Guid="bbf67de1-7fd1-41c6-92af-ce7e6a54b112" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari -ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="8f5ee79635f6e2b32a99bae0d778bac2.png" xmlns="">0vCVupJMKhUCZr5i3PPUkmw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
