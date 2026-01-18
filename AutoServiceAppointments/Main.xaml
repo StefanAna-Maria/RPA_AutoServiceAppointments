@@ -223,13 +223,13 @@
                     <av:PointCollection x:Key="ConnectorLocation">470,335 470,415</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Programari -ANA MARIA STEFAN - Outlook" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,3018" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7ef70245-058a-4197-9dce-90b18085f1d7" Version="V2">
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Programari -ANA MARIA STEFAN - Outlook" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="524,3042" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7ef70245-058a-4197-9dce-90b18085f1d7" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2847" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2871" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -241,13 +241,13 @@
                           </uix:NClick.Target>
                         </uix:NClick>
                         <Delay Duration="00:00:00" sap:VirtualizedContainerService.HintSize="488,127" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2458" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2482" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowMail" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,2281" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,2305" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="bodyTextClean" />
                                   <Variable x:TypeArguments="x:String" Name="bodyText" />
@@ -294,7 +294,7 @@
                                     <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(bodyTextClean, "\s+", " ").Trim]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
+                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InArgument x:TypeArguments="x:String" x:Key="in_BodyText">[bodyTextClean]</InArgument>
                                     <OutArgument x:TypeArguments="x:String" x:Key="out_DataDorita">[outdatadorita]</OutArgument>
@@ -303,10 +303,10 @@
                                     <OutArgument x:TypeArguments="x:String" x:Key="out_NumeClient">[outnumeclient]</OutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[outnumeclient &amp; &quot; | &quot; &amp; outmasina &amp; &quot; | &quot; &amp; outserviciu &amp; &quot; | &quot; &amp; outdatadorita]" />
-                                <If Condition="[CurrentIndex &lt; dtMailsMain.Rows.Count - 1]" sap:VirtualizedContainerService.HintSize="452,1001" sap2010:WorkflowViewState.IdRef="If_1">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[outnumeclient &amp; &quot; | &quot; &amp; outmasina &amp; &quot; | &quot; &amp; outserviciu &amp; &quot; | &quot; &amp; outdatadorita]" />
+                                <If Condition="[CurrentIndex &lt; dtMailsMain.Rows.Count - 1]" sap:VirtualizedContainerService.HintSize="452,1013" sap2010:WorkflowViewState.IdRef="If_1">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,781" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,785" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,7 +314,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ASANA MARIA STEFAN…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,198" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7ef70245-058a-4197-9dce-90b18085f1d7" Version="V5">
                                         <uix:NClick.Target>
-                                          <uix:TargetAnchorable BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D/id/AAQkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAQAP%2FfI5WJl%2BtFnVzsHIfSTiw%3D" ContentHash="fDr3BFl0hUCEM2tL4ZGctA" DesignTimeRectangle="295, 316, 380, 715" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='MailList' tag='DIV' /&gt;" Guid="2422a926-ed0c-4f36-b0b5-6337035cf1a7" InformativeScreenshot="6a633837e9a5021dd8a59b21eecab725.png" Reference="hRGZvbx-QUqDSvuFD_-Ygg/V_c_zEitT0CS3j-dHx2EiQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari -ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                          <uix:TargetAnchorable BrowserURL="outlook.office.com/mail/AAMkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAuAAAAAADkd1iz5ERmR6%2FjQegWczfzAQALhHX2sUULSrFUYQQtZiTDAAMQ%2FQwRAAA%3D/id/AAQkAGZhMDAyZjgwLWFjNTAtNDg2Yy04N2FjLWMzYTdiZGE3YmQwYgAQAP%2FfI5WJl%2BtFnVzsHIfSTiw%3D" ContentHash="8pGe9HzGjEe0KFN2JB0cYw" DesignTimeRectangle="257, 316, 350, 715" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='MailList' tag='DIV' /&gt;" Guid="2422a926-ed0c-4f36-b0b5-6337035cf1a7" InformativeScreenshot="05cfc357c75959bad4d2a19af9fab691.png" Reference="hRGZvbx-QUqDSvuFD_-Ygg/V_c_zEitT0CS3j-dHx2EiQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari -ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                                         </uix:NClick.Target>
                                       </uix:NClick>
                                       <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,405" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="7ef70245-058a-4197-9dce-90b18085f1d7" Shortcuts="[d(hk)][k(Down)][u(hk)]" Version="V5" />
@@ -322,7 +322,7 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
