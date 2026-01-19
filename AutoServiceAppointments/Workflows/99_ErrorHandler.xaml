@@ -85,19 +85,19 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_99_ErrorHandler" sap:VirtualizedContainerService.HintSize="768,2510" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_99_ErrorHandler" sap:VirtualizedContainerService.HintSize="768,2567" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2487" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,2544" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="rowMail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,2314" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,2371" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -140,10 +140,10 @@
                 <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(bodyTextClean, "\s+", " ").Trim]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,243" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_BodyText">[bodyTextClean]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_DataDorita">[out_data]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_Data">[out_data]</OutArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_Serviciu">[out_tipserviciu]</OutArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_Masina">[out_masina]</OutArgument>
                 <OutArgument x:TypeArguments="x:String" x:Key="out_NumeClient">[out_numeclient]</OutArgument>

@@ -271,7 +271,7 @@
                             <OutArgument x:TypeArguments="x:Int32">[maxSame]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[3]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32">[1]</InArgument>
                           </Assign.Value>
                         </Assign>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,179" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;PRE: idx=&quot; + currentIndex.ToString +&#xD;&#xA;&quot; same=&quot; + sameCount.ToString +&#xD;&#xA;&quot; maxSame=&quot; + maxSame.ToString +&#xD;&#xA;&quot; rows=&quot; + dtMailsMain.Rows.Count.ToString]" />
@@ -439,19 +439,20 @@
                                         <InArgument x:TypeArguments="x:String">[currBodyClean]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Ora">[out_ora]</OutArgument>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_BodyText">[bodyTextClean]</InArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_DataDorita">[out_data]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_Data">[out_data]</OutArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_Serviciu">[out_tipserviciu]</OutArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_Masina">[out_masina]</OutArgument>
                                         <OutArgument x:TypeArguments="x:String" x:Key="out_NumeClient">[out_numeclient]</OutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_numeclient &amp; &quot; | &quot; &amp; out_masina &amp; &quot; | &quot; &amp; out_tipserviciu &amp; &quot; | &quot; &amp; out_data &amp; &quot;Ora:&quot; &amp; out_ora]" />
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[out_numeclient &amp; &quot; | &quot; &amp; out_masina &amp; &quot; | &quot; &amp; out_tipserviciu &amp; &quot; | &quot; &amp; out_data &amp; &quot; | &quot; &amp; out_ora]" />
                                     <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ASANA MARIA STEFAN…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,198" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7ef70245-058a-4197-9dce-90b18085f1d7" Version="V5">
                                       <uix:NClick.Target>
-                                        <uix:TargetAnchorable BrowserURL="outlook.live.com/mail/0/AQMkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAuAAADIIPKomlyi0eI94kj%2BosUFQEA479uXRKE4k%2BwWlzQ4fT59QAAAgFdAAAA/id/AQQkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAQAOJm04RxCzNJtJEdReogHIk%3D" ContentHash="dTIWZZW9jkyG-VO__3dDeA" DesignTimeRectangle="257, 316, 350, 715" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='MailList' tag='DIV' /&gt;" Guid="723f50cf-623f-49a8-81e1-0ca6ff7d7add" InformativeScreenshot="900827041edd61610d15dcdfc8e0f874.png" Reference="hRGZvbx-QUqDSvuFD_-Ygg/V_c_zEitT0CS3j-dHx2EiQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                        <uix:TargetAnchorable BrowserURL="outlook.live.com/mail/0/AQMkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAuAAADIIPKomlyi0eI94kj%2BosUFQEA479uXRKE4k%2BwWlzQ4fT59QAAAgFdAAAA/id/AQQkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAQAOJm04RxCzNJtJEdReogHIk%3D" ContentHash="ifG0DcQFEEOSPOHjgQzDwg" DesignTimeRectangle="257, 316, 350, 715" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='MailList' tag='DIV' /&gt;" Guid="723f50cf-623f-49a8-81e1-0ca6ff7d7add" InformativeScreenshot="900827041edd61610d15dcdfc8e0f874.png" Reference="hRGZvbx-QUqDSvuFD_-Ygg/V_c_zEitT0CS3j-dHx2EiQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                                       </uix:NClick.Target>
                                     </uix:NClick>
                                     <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,405" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="HardwareEvents" ScopeIdentifier="7ef70245-058a-4197-9dce-90b18085f1d7" Shortcuts="[d(hk)][k(Down)][u(hk)]" Version="V5" />

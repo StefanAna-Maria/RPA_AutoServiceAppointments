@@ -1,11 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="_03_ParseEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="out_Ora" Type="OutArgument(x:String)" />
     <x:Property Name="in_BodyText" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="out_DataDorita" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Data" Type="OutArgument(x:String)" />
     <x:Property Name="out_Serviciu" Type="OutArgument(x:String)" />
     <x:Property Name="out_Masina" Type="OutArgument(x:String)" />
     <x:Property Name="out_NumeClient" Type="OutArgument(x:String)" />
@@ -123,13 +124,13 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_ParseEmail" sap:VirtualizedContainerService.HintSize="672,714" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_ParseEmail" sap:VirtualizedContainerService.HintSize="573,1348" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_NumeClient]</OutArgument>
       </Assign.To>
@@ -137,7 +138,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "Nume:\s*(.*?)(?=\s+Masina:|\s+Serviciu:|\s+Data:|$)").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_Masina]</OutArgument>
       </Assign.To>
@@ -145,7 +146,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "Masina:\s*(.*?)(?=\s+Nume:|\s+Serviciu:|\s+Data:|$)").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_Serviciu]</OutArgument>
       </Assign.To>
@@ -153,13 +154,49 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "Serviciu:\s*(.*?)(?=\s+Nume:|\s+Masina:|\s+Data:|$)").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_DataDorita]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[out_Data]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "Data:\s*(.*?)(?=\s+Nume:|\s+Masina:|\s+Serviciu:|$)").Groups(1).Value.Trim]</InArgument>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "(?i)Data:\s*([0-9]{1,2}\.[0-9]{1,2}\.[0-9]{4})").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_Ora]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "(?i)Ora:\s*([0-9]{1,2}:[0-9]{2})").Groups(1).Value.Trim]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[String.IsNullOrWhiteSpace(out_Ora)]" sap:VirtualizedContainerService.HintSize="452,450" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_Ora]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[""]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
