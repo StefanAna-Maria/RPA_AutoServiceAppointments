@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Programari",
+  "Type": "Element",
+  "Id": "dKScS5wNpEW-uldDv_azHQ",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/dKScS5wNpEW-uldDv_azHQ",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-19T16:16:04.4936084Z",
+  "Updated": "2026-01-19T16:16:04.4936084Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

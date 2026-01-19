@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="aNCqIwSbyEuOSRQqCWyyeg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.office.com/mail" CVScreenId="228efe69-7430-44eb-92b4-9c5487f92af8" CvTextArea="125, 517, 70, 16" CvTextArgument="Programari" CvType="Text" DesignTimeRectangle="66, 505, 172, 36" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='treeitem' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='folderPanePinFavoritesFolderContainer' tag='DIV' /&gt;" Guid="5534acda-2596-4dc1-b207-ed3d2f8c4206" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Inbox -ANA MARIA STEFAN - Outlook' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="46f174ed06e9c0bc7c66acaf828a8105.png" xmlns="">062AWzAc52UCeAuF5p-cFdA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

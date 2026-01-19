@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Programari -ANA MARIA STEFAN - Outlook(1)",
+  "Type": "Screen",
+  "Id": "IEvYzDD8gECS6JUcZ66_kA",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/IEvYzDD8gECS6JUcZ66_kA",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/cENVJOiHpESoGwTKq9NeBQ",
+  "Created": "2026-01-19T16:30:18.0226558Z",
+  "Updated": "2026-01-19T16:30:18.0226558Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
