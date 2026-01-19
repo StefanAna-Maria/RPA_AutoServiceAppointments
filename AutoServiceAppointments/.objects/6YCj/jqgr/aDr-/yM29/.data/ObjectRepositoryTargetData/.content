@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="LTqJLNOvHEiPR3ENvEXdnA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="4e3c882f-9e8a-4169-8f23-e6ec0e2af135" CvTextArea="133, 320, 41, 14" CvTextArgument="Inbox" CvType="Text" DesignTimeRectangle="133, 320, 41, 14" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="0c60fca1-f6fe-4f9a-96eb-7ec8ad984e51" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Mail - ANDREEA DIMA - Outlook - Google Chrome' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="11fb62c20a85e88ce992b44f5a7b4a5b.png" xmlns="">0nhf6dMDhTU-WyGizFGshhg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

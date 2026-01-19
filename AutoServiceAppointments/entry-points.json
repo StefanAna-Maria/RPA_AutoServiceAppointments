@@ -4,7 +4,45 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "e3b082a1-924a-4f4a-83bd-e75b2e723e8a",
-      "type": "process"
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_BodyText": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_OraDorita": {
+            "type": "string"
+          },
+          "out_DataDorita": {
+            "type": "string"
+          },
+          "out_Serviciu": {
+            "type": "string"
+          },
+          "out_Masina": {
+            "type": "string"
+          },
+          "out_NumeClient": {
+            "type": "string"
+          },
+          "out_MessageId": {
+            "type": "string"
+          },
+          "out_Subject": {
+            "type": "string"
+          },
+          "out_From": {
+            "type": "string"
+          }
+        }
+      }
     }
   ]
 }

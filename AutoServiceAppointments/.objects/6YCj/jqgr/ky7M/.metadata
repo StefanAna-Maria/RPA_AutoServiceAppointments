@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Mail - ANDREEA DIMA - Outlook - Google Chrome(2)",
+  "Type": "Screen",
+  "Id": "ky7MoMYkKEiY6SOFC5N-6Q",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/ky7MoMYkKEiY6SOFC5N-6Q",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/jqgrabtMSEaLNIUsDuhgHg",
+  "Created": "2026-01-19T12:04:30.8610633Z",
+  "Updated": "2026-01-19T12:04:30.8610633Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
