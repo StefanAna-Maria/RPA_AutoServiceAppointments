@@ -4,6 +4,7 @@
   "description": "Automated assistant for managing auto service appointment requests",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DocumentUnderstanding.Activities": "[2.17.2]",
     "UiPath.Excel.Activities": "[3.3.1]",
     "UiPath.GSuite.Activities": "[3.5.11]",
     "UiPath.Mail.Activities": "[2.5.10]",
@@ -53,6 +54,18 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "e3b082a1-924a-4f4a-83bd-e75b2e723e8a",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Workflows\\04_AutomatePDF.xaml",
+      "uniqueId": "92b970b6-566c-48f2-aae2-6ab4e25eb015",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Workflows\\08_DynamicSelectors.xaml",
+      "uniqueId": "aaae8c3e-f293-4eda-8850-a1773fa9fcf2",
       "input": [],
       "output": []
     }
