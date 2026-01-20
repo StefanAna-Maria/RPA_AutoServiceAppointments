@@ -136,7 +136,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1037.7818181818182,671.1272727272727" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1043.7818181818182,714.7112121212122" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="out_NumeClient" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtMails" />
@@ -193,7 +193,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart sap:VirtualizedContainerService.HintSize="866.6181818181819,867.4909090909091" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart sap:VirtualizedContainerService.HintSize="600.4363636363637,648.4363636363637" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="x:Boolean" Default="True" Name="excelAvailable" />
       </Flowchart.Variables>
@@ -238,7 +238,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">305,159.9090909090909 214.96363636363637,159.9090909090909</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="09_ScrapeAvailableSlots - Invoke Workflow File (Workflows\09_ScrapeAvailableSlots.xaml)" sap:VirtualizedContainerService.HintSize="109.96363636363637,69.81818181818183" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\09_ScrapeAvailableSlots.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="09_ScrapeAvailableSlots - Invoke Workflow File (Workflows\09_ScrapeAvailableSlots.xaml)" sap:VirtualizedContainerService.HintSize="109.96363636363637,69.81818181818183" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Workflows\09_ScrapeAvailableSlots.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtSlots">[dtSlots]</OutArgument>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config">[configDict]</InArgument>
@@ -271,7 +271,7 @@
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">105,245</av:Point>
                         <av:Size x:Key="ShapeSize">109.96363636363637,69.81818181818183</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">159.9818181818182,314.8181818181818 159.9818181818182,344.81818181818187 169.9818181818182,344.81818181818187 169.9818181818182,415</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">159.9818181818182,314.8181818181818 159.9818181818182,405</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="02_GetEmails - Invoke Workflow File (Workflows\02_GetEmails.xaml)" sap:VirtualizedContainerService.HintSize="109.96363636363637,69.81818181818183" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\02_GetEmails.xaml">
@@ -289,9 +289,9 @@
                       <FlowStep x:Name="__ReferenceID4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">115,415</av:Point>
+                            <av:Point x:Key="ShapeLocation">105,405</av:Point>
                             <av:Size x:Key="ShapeSize">109.96363636363637,69.81818181818183</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">224.96363636363637,449.90909090909093 254.96363636363637,449.90909090909093 254.96363636363637,439.90909090909093 415,439.90909090909093</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">214.96363636363637,439.90909090909093 345,439.90909090909093</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="109.96363636363637,69.81818181818183" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Main - Processing emails. Slots available rows: &quot; + dtSlots.Rows.Count.ToString]">
@@ -305,17 +305,17 @@
                           <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">415,405</av:Point>
+                                <av:Point x:Key="ShapeLocation">345,405</av:Point>
                                 <av:Size x:Key="ShapeSize">109.96363636363637,69.81818181818183</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="109.96363636363637,69.81818181818183" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtMailsMain]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="523.6363636363636,5797.527272727273" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521.8909090909091,5466.763636363637" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521.8909090909091,5646.545454545455" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="mailText" />
                                     </Sequence.Variables>
@@ -368,15 +368,15 @@
                                         <InOutArgument x:TypeArguments="x:String" x:Key="io_NumeClient" />
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
-                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="487.8545454545455,4491.054545454545" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="487.8545454545455,4670.836363636364" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                       <TryCatch.Try>
-                                        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486.1090909090909,1958.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486.1090909090909,2138.1818181818185" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452.0727272727273,188.50909090909093" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="03_ParseEmail - Invoke Workflow File (Workflows\03_ParseEmail.xaml)" sap:VirtualizedContainerService.HintSize="452.0727272727273,184.14545454545456" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Workflows\03_ParseEmail.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_OraDorita">[out_OraDorita]</OutArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_BodyText">[mailText]</InArgument>
@@ -386,7 +386,21 @@
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_NumeClient">[out_NumeClient]</OutArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
-                                          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="07_CreateCalendarEvent - Invoke Workflow File (Workflows\07_CreateCalendarEvent.xaml)" sap:VirtualizedContainerService.HintSize="452.0727272727273,188.50909090909093" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Workflows\07_CreateCalendarEvent.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Ora">[out_OraDorita]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Data">[out_DataDorita]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Serviciu">[out_Serviciu]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Masina">[out_Masina]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Nume">[out_NumeClient]</InArgument>
+                                              <OutArgument x:TypeArguments="x:String" x:Key="out_Reason">[reason]</OutArgument>
+                                              <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[status]</OutArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_DefaultDurationMinutes">[Int32.Parse(configDict("DefaultDurationMinutes"))]</InArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtServiceTypes">[dtServiceTypes]</InArgument>
+                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtSlots">[dtSlots]</InArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_6">
                                             <Assign.To>
                                               <OutArgument x:TypeArguments="x:Boolean">[isValid]</OutArgument>
                                             </Assign.To>
