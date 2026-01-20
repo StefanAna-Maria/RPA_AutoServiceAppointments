@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Mon 1192026 456 PM",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ePDgZtiFaEONyCFA3SXVVA",
+  "Reference": "hRGZvbx-QUqDSvuFD_-Ygg/ePDgZtiFaEONyCFA3SXVVA",
+  "ParentRef": "hRGZvbx-QUqDSvuFD_-Ygg/OWsiuR3Lx06PBqBOQvwDIg",
+  "Created": "2026-01-19T20:19:46.9631844Z",
+  "Updated": "2026-01-19T20:19:46.9631844Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.24.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

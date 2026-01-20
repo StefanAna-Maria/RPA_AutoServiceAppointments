@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VAKaWj89PkyEhGl_7mabtQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.live.com/mail/0/AQMkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAuAAADIIPKomlyi0eI94kj%2BosUFQEA479uXRKE4k%2BwWlzQ4fT59QAAAgFdAAAA" DesignTimeRectangle="257, 921, 350, 81" ElementType="CheckBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='AQAAAAAAAQABAAAAAAAUsQAAAAA=' tag='DIV' /&gt;" Guid="819804e3-0cb1-499a-a2bf-155abd411c10" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari - For Uni - Outlook' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="78d1e436012cd46d9be6db1ebe9cdc6d.png" xmlns="">0Vgrigrfy8k2B4YbWR72dpQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

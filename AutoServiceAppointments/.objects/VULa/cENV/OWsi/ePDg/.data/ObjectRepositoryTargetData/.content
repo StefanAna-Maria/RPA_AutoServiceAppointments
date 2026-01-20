@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="MHTkTbZUxEmbmImw-sRG2A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="outlook.live.com/mail/0/AQMkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAuAAADIIPKomlyi0eI94kj%2BosUFQEA479uXRKE4k%2BwWlzQ4fT59QAAAgFdAAAA/id/AQQkADAwATM3ZmYBLWFhADlkLTM5ODktMDACLTAwCgAQAMlcHq0Y1b1OmznaKK3oMp8%3D" CVScreenId="a7d2d03b-52f2-4b53-9aae-20ae0fab7808" CvType="AnyWordGroup" DesignTimeRectangle="826, 370, 129, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='heading' parentid='focused' tag='DIV' type='' class='AL_OM I1wdR' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="bb23103b-6eba-4147-8d33-679cb844163f" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Programari - For Uni - Outlook' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="c94dd99bb92832cee63799b405512834.png" xmlns="">0Ex1KvwE4lU63mPuEgXmOHA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
