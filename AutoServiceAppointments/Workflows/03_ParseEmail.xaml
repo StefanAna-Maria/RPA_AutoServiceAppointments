@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_03_ParseEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_03_ParseEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_OraDorita" Type="OutArgument(x:String)" />
     <x:Property Name="in_BodyText" Type="InArgument(x:String)">
@@ -58,6 +58,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -124,8 +125,13 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_ParseEmail" sap:VirtualizedContainerService.HintSize="1037.7818181818182,1070.8363636363638" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_ParseEmail" sap:VirtualizedContainerService.HintSize="860.6181818181819,5109.818181818182" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="timeOk" />
+      <Variable x:TypeArguments="x:Boolean" Name="dateOk" />
+      <Variable x:TypeArguments="s:DateTime" Name="parsedTime" />
+      <Variable x:TypeArguments="s:DateTime" Name="parsedDate" />
+      <Variable x:TypeArguments="x:String" Name="missingFields" />
       <Variable x:TypeArguments="x:String" Name="mailText" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -133,7 +139,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[mailText]</OutArgument>
       </Assign.To>
@@ -141,7 +147,7 @@
         <InArgument x:TypeArguments="x:String">[in_BodyText]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_NumeClient]</OutArgument>
       </Assign.To>
@@ -149,7 +155,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(mailText, "(?im)^\s*Nume\s*:\s*(.+)\s*$").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_Masina]</OutArgument>
       </Assign.To>
@@ -157,7 +163,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(mailText, "(?im)^\s*Masina\s*:\s*(.+)\s*$").Groups(1).Value.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_Serviciu]</OutArgument>
       </Assign.To>
@@ -165,7 +171,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(mailText, "(?im)^\s*Serviciu\s*:\s*(.+)\s*$").Groups(1).Value.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_DataDorita]</OutArgument>
       </Assign.To>
@@ -173,7 +179,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(mailText, "(?im)^\s*Data\s*:\s*(\d{2}\.\d{2}\.\d{4})\s*$").Groups(1).Value.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="450.32727272727277,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_OraDorita]</OutArgument>
       </Assign.To>
@@ -181,5 +187,238 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(in_BodyText, "(?i)Ora:\s*([0-9]{1,2}:[0-9]{2})").Groups(1).Value.Trim]</InArgument>
       </Assign.Value>
     </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[""]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[String.IsNullOrWhiteSpace(out_NumeClient)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,457.3090909090909" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[missingFields + "NumeClient, "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[String.IsNullOrWhiteSpace(out_Masina)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,457.3090909090909" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[missingFields + "Masina, "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[String.IsNullOrWhiteSpace(out_Serviciu)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,457.3090909090909" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[missingFields + "Serviciu, "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[String.IsNullOrWhiteSpace(out_DataDorita)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,457.3090909090909" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[missingFields + "DataDorita, "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[String.IsNullOrWhiteSpace(out_OraDorita)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,457.3090909090909" sap2010:WorkflowViewState.IdRef="If_5">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[missingFields]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[missingFields + "OraDorita, "]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[Not String.IsNullOrWhiteSpace(missingFields)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,404.9454545454546" sap2010:WorkflowViewState.IdRef="If_6">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,174.54545454545456" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New UiPath.Core.BusinessRuleException(&quot;Missing required fields: &quot; + missingFields)]" sap:VirtualizedContainerService.HintSize="416.2909090909091,114.32727272727273" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[dateOk]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[DateTime.TryParseExact(out_DataDorita, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture, Globalization.DateTimeStyles.None, parsedDate)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[Not dateOk]" sap:VirtualizedContainerService.HintSize="452.0727272727273,409.3090909090909" sap2010:WorkflowViewState.IdRef="If_7">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,178.9090909090909" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New UiPath.Core.BusinessRuleException(&quot;Invalid date format. Expected dd.MM.yyyy. Got: &quot; + out_DataDorita)]" sap:VirtualizedContainerService.HintSize="416.2909090909091,118.6909090909091" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[timeOk]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean" xml:space="preserve">[DateTime.TryParseExact(
+    out_OraDorita,
+    "HH:mm",
+    System.Globalization.CultureInfo.InvariantCulture,
+    Globalization.DateTimeStyles.None,
+    parsedTime
+)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[Not timeOk]" sap:VirtualizedContainerService.HintSize="452.0727272727273,399.70909090909095" sap2010:WorkflowViewState.IdRef="If_8">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,178.9090909090909" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw Exception="[New UiPath.Core.BusinessRuleException(&#xD;&#xA;    &quot;Invalid time format. Expected HH:mm. Got: &quot; + out_OraDorita&#xD;&#xA;)]" sap:VirtualizedContainerService.HintSize="416.2909090909091,118.6909090909091" sap2010:WorkflowViewState.IdRef="Throw_3" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>

@@ -64,6 +64,7 @@
       <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
       <x:String>UiPath.GSuite</x:String>
       <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -137,7 +138,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_GetEmails" sap:VirtualizedContainerService.HintSize="1037.7818181818182,1669.527272727273" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_GetEmails" sap:VirtualizedContainerService.HintSize="860.6181818181819,2621.6727272727276" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Object" Name="msg" />
       <Variable x:TypeArguments="s:Object[]" Name="messages" />
@@ -153,89 +154,153 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Get Emails (Gmail)" sap:VirtualizedContainerService.HintSize="486.1090909090909,1646.8363636363638" sap2010:WorkflowViewState.IdRef="Sequence_7">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[gmailQuery]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[in_ConfigDict("GmailQuery").ToString]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:BuildDataTable DataTable="[dtMails]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="452.0727272727273,92.50909090909092" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;MessageId&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;From&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Subject&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Body&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-      <uga:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" CurrentIndex="{x:Null}" EmailList="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IllFTExPV19TVEFSIiwiTmFtZSI6IllFTExPV19TVEFSIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJTVEFSUkVEIiwiTmFtZSI6IlNUQVJSRUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlVOUkVBRCIsIk5hbWUiOiJVTlJFQUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkxhYmVsXzIwNzMyMTIwNDc0NzY5NTQyNzciLCJOYW1lIjoicHJvY2Vzc2VkIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfMjk5MzkwNjYwMjE3MDM2NDE5MSIsIk5hbWUiOiJwcm9ncmFtYXJpIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNjI3Mjk3MzQzODM1MTMyODA1NCIsIk5hbWUiOiJyZWplY3RlZCIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="programari" BrowserFolderLabelId="Label_2993906602170364191" ConnectionId="edd5645f-c157-488f-8caf-e96cc6ea4021" DisplayName="Get Email List" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="452.0727272727273,240.87272727272727" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
-        <uga:GetEmailListConnections.FilterSelectionBackup>
-          <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
-            <usau:BackupSlot.BackupValues>
-              <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
-            </usau:BackupSlot.BackupValues>
-          </usau:BackupSlot>
-        </uga:GetEmailListConnections.FilterSelectionBackup>
-        <uga:GetEmailListConnections.Folder>
-          <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_2993906602170364191" BrowserFolderName="programari" ConnectionKey="edd5645f-c157-488f-8caf-e96cc6ea4021" InputMode="Browse">
-            <ugagm:FolderArgument.Backup>
-              <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
-                <usau:BackupSlot.BackupValues>
-                  <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
-                </usau:BackupSlot.BackupValues>
-              </usau:BackupSlot>
-            </ugagm:FolderArgument.Backup>
-          </ugagm:FolderArgument>
-        </uga:GetEmailListConnections.Folder>
-      </uga:GetEmailListConnections>
-      <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IllFTExPV19TVEFSIiwiTmFtZSI6IllFTExPV19TVEFSIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJTVEFSUkVEIiwiTmFtZSI6IlNUQVJSRUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlVOUkVBRCIsIk5hbWUiOiJVTlJFQUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkxhYmVsXzIwNzMyMTIwNDc0NzY5NTQyNzciLCJOYW1lIjoicHJvY2Vzc2VkIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfMjk5MzkwNjYwMjE3MDM2NDE5MSIsIk5hbWUiOiJwcm9ncmFtYXJpIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNjI3Mjk3MzQzODM1MTMyODA1NCIsIk5hbWUiOiJyZWplY3RlZCIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="programari" BrowserFolderLabelId="Label_2993906602170364191" ConnectionId="edd5645f-c157-488f-8caf-e96cc6ea4021" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="452.0727272727273,711.2727272727274" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
-        <uga:ForEachEmailConnections.Body>
-          <ActivityAction x:TypeArguments="ugm:GmailMessage, x:Int32">
-            <ActivityAction.Argument1>
-              <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="CurrentEmail" />
-            </ActivityAction.Argument1>
-            <ActivityAction.Argument2>
-              <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
-            </ActivityAction.Argument2>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.32727272727277,462.54545454545456" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="557.6727272727273,2598.981818181818" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="555.9272727272728,2043.0545454545456" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Get Emails (Gmail)" sap:VirtualizedContainerService.HintSize="521.8909090909091,1982.8363636363638" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[gmailQuery]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_ConfigDict("GmailQuery").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:BuildDataTable DataTable="[dtMails]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="487.8545454545455,92.50909090909092" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;MessageId&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;From&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Subject&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Body&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="487.8545454545455,1288.1454545454546" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:05">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="486.1090909090909,998.4000000000001" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uga:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" CurrentIndex="{x:Null}" EmailList="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IllFTExPV19TVEFSIiwiTmFtZSI6IllFTExPV19TVEFSIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJTVEFSUkVEIiwiTmFtZSI6IlNUQVJSRUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlVOUkVBRCIsIk5hbWUiOiJVTlJFQUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkxhYmVsXzIwNzMyMTIwNDc0NzY5NTQyNzciLCJOYW1lIjoicHJvY2Vzc2VkIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfMjk5MzkwNjYwMjE3MDM2NDE5MSIsIk5hbWUiOiJwcm9ncmFtYXJpIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNjI3Mjk3MzQzODM1MTMyODA1NCIsIk5hbWUiOiJyZWplY3RlZCIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="programari" BrowserFolderLabelId="Label_2993906602170364191" ConnectionId="edd5645f-c157-488f-8caf-e96cc6ea4021" DisplayName="Get Email List" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="452.0727272727273,240.87272727272727" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+                      <uga:GetEmailListConnections.FilterSelectionBackup>
+                        <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
+                          <usau:BackupSlot.BackupValues>
+                            <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
+                          </usau:BackupSlot.BackupValues>
+                        </usau:BackupSlot>
+                      </uga:GetEmailListConnections.FilterSelectionBackup>
+                      <uga:GetEmailListConnections.Folder>
+                        <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_2993906602170364191" BrowserFolderName="programari" ConnectionKey="edd5645f-c157-488f-8caf-e96cc6ea4021" InputMode="Browse">
+                          <ugagm:FolderArgument.Backup>
+                            <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </ugagm:FolderArgument.Backup>
+                        </ugagm:FolderArgument>
+                      </uga:GetEmailListConnections.Folder>
+                    </uga:GetEmailListConnections>
+                    <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" Length="{x:Null}" ManualEntryFolder="{x:Null}" QueryFilter="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IllFTExPV19TVEFSIiwiTmFtZSI6IllFTExPV19TVEFSIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJTVEFSUkVEIiwiTmFtZSI6IlNUQVJSRUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlVOUkVBRCIsIk5hbWUiOiJVTlJFQUQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkxhYmVsXzIwNzMyMTIwNDc0NzY5NTQyNzciLCJOYW1lIjoicHJvY2Vzc2VkIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfMjk5MzkwNjYwMjE3MDM2NDE5MSIsIk5hbWUiOiJwcm9ncmFtYXJpIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNjI3Mjk3MzQzODM1MTMyODA1NCIsIk5hbWUiOiJyZWplY3RlZCIsIlR5cGUiOiJ1c2VyIn1d" AuthScopesInvalid="False" BrowserFolder="programari" BrowserFolderLabelId="Label_2993906602170364191" ConnectionId="edd5645f-c157-488f-8caf-e96cc6ea4021" CurrentItemVariableName="CurrentEmail" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="452.0727272727273,697.309090909091" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+                      <uga:ForEachEmailConnections.Body>
+                        <ActivityAction x:TypeArguments="ugm:GmailMessage, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="CurrentEmail" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.32727272727277,458.1818181818182" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA; CurrentEmail.Headers(&quot;Message-ID&quot;),&#xA; CurrentEmail.From.ToString,&#xA; CurrentEmail.Subject,&#xA; CurrentEmail.Body,&#xA; CurrentEmail.Headers(&quot;Date&quot;)&#xA;}]" DataTable="[dtMails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416.2909090909091,226.90909090909093" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Added mail: &quot; + CurrentEmail.Subject]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </uga:ForEachEmailConnections.Body>
+                      <uga:ForEachEmailConnections.FilterSelectionBackup>
+                        <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
+                          <usau:BackupSlot.BackupValues>
+                            <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
+                          </usau:BackupSlot.BackupValues>
+                        </usau:BackupSlot>
+                      </uga:ForEachEmailConnections.FilterSelectionBackup>
+                      <uga:ForEachEmailConnections.Folder>
+                        <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_2993906602170364191" BrowserFolderName="programari" InputMode="Browse">
+                          <ugagm:FolderArgument.Backup>
+                            <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                              <usau:BackupSlot.BackupValues>
+                                <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
+                              </usau:BackupSlot.BackupValues>
+                            </usau:BackupSlot>
+                          </ugagm:FolderArgument.Backup>
+                        </ugagm:FolderArgument>
+                      </uga:ForEachEmailConnections.Folder>
+                    </uga:ForEachEmailConnections>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:CheckTrue DisplayName="Check True" ErrorMessage="dtMails is Nothing after Gmail read" Expression="[dtMails IsNot Nothing]" sap:VirtualizedContainerService.HintSize="461.6727272727273,132.65454545454546" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[out_Mails]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[dtMails]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="487.8545454545455,166.6909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Total mails in dt: &quot; + out_Mails.Rows.Count.ToString]" />
+          </Sequence>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="555.9272727272728,296.72727272727275" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA; CurrentEmail.Headers(&quot;Message-ID&quot;),&#xA; CurrentEmail.From.ToString,&#xA; CurrentEmail.Subject,&#xA; CurrentEmail.Body,&#xA; CurrentEmail.Headers(&quot;Date&quot;)&#xA;}]" DataTable="[dtMails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416.2909090909091,226.90909090909093" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416.2909090909091,171.05454545454546" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Added mail: &quot; + CurrentEmail.Subject]" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="99_ErrorHandler - Invoke Workflow File (Workflows\99_ErrorHandler.xaml)" sap:VirtualizedContainerService.HintSize="521.8909090909091,184.14545454545456" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\99_ErrorHandler.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AdditionalInfo">Label=programari</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">GMAIL</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsFatal">True</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Context">02_GetEmails</InArgument>
+                  <InArgument x:TypeArguments="s:Exception" x:Key="in_Exception">[exception]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Rethrow sap:VirtualizedContainerService.HintSize="521.8909090909091,52.36363636363637" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
-        </uga:ForEachEmailConnections.Body>
-        <uga:ForEachEmailConnections.FilterSelectionBackup>
-          <usau:BackupSlot x:TypeArguments="ugae:FilterMode" StoredValue="ConditionBuilder">
-            <usau:BackupSlot.BackupValues>
-              <scg:Dictionary x:TypeArguments="ugae:FilterMode, scg:List(x:Object)" />
-            </usau:BackupSlot.BackupValues>
-          </usau:BackupSlot>
-        </uga:ForEachEmailConnections.FilterSelectionBackup>
-        <uga:ForEachEmailConnections.Folder>
-          <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="Label_2993906602170364191" BrowserFolderName="programari" InputMode="Browse">
-            <ugagm:FolderArgument.Backup>
-              <usau:BackupSlot x:TypeArguments="ugage:FolderInputMode" x:Name="__ReferenceID1" StoredValue="Browse">
-                <usau:BackupSlot.BackupValues>
-                  <scg:Dictionary x:TypeArguments="ugage:FolderInputMode, scg:List(x:Object)" />
-                </usau:BackupSlot.BackupValues>
-              </usau:BackupSlot>
-            </ugagm:FolderArgument.Backup>
-          </ugagm:FolderArgument>
-        </uga:ForEachEmailConnections.Folder>
-      </uga:ForEachEmailConnections>
-      <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
-        <Assign.To>
-          <OutArgument x:TypeArguments="sd:DataTable">[out_Mails]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="sd:DataTable">[dtMails]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452.0727272727273,166.6909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Total mails in dt: &quot; + out_Mails.Rows.Count.ToString]" />
-    </Sequence>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="555.9272727272728,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
   </Sequence>
 </Activity>

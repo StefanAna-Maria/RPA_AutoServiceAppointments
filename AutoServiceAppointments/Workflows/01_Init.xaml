@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_01_Init" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_Init" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_AppointmentsExcelFullPath" Type="OutArgument(x:String)" />
     <x:Property Name="out_ServiceTypes" Type="OutArgument(sd:DataTable)" />
@@ -59,6 +59,7 @@
       <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -127,9 +128,11 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_01_Init" sap:VirtualizedContainerService.HintSize="1037.7818181818182,1378.0363636363638" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_01_Init" sap:VirtualizedContainerService.HintSize="860.6181818181819,2606.836363636364" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="configDict" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtServiceTypes" />
@@ -141,66 +144,137 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="452.0727272727273,120.43636363636364" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Config" WorkbookPath="[configPath]" />
-    <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtServiceTypes]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="452.0727272727273,120.43636363636364" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="ServiceTypes" WorkbookPath="[configPath]" />
-    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtConfig]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452.0727272727273,418.90909090909093" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-      <ui:ForEachRow.Body>
-        <ActivityAction x:TypeArguments="sd:DataRow">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450.32727272727277,235.63636363636365" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,171.05454545454546" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[configDict(row("Key").ToString.Trim)]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[row("Value").ToString.Trim]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEachRow.Body>
-    </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_ConfigDict]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_5">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_AppointmentsExcelFullPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.IO.Path.Combine(
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="487.8545454545455,2584.145454545455" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="486.1090909090909,2028.2181818181818" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="configFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FileExistsX DisplayName="File Exists" Exists="[configFileExists]" sap:VirtualizedContainerService.HintSize="452.0727272727273,172.8" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[configPath]" />
+          <If Condition="[Not configFileExists]" sap:VirtualizedContainerService.HintSize="452.0727272727273,422.40000000000003" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,183.27272727272728" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[New Exception(&quot;Missing config file: &quot; + configPath)]" sap:VirtualizedContainerService.HintSize="416.2909090909091,118.6909090909091" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,95.12727272727274" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtConfig]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="452.0727272727273,124.80000000000001" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Config" WorkbookPath="[configPath]" />
+          <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dtServiceTypes]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="452.0727272727273,124.80000000000001" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="ServiceTypes" WorkbookPath="[configPath]" />
+          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[New Dictionary(Of String, String)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtConfig]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452.0727272727273,418.90909090909093" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450.32727272727277,231.27272727272728" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,171.05454545454546" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[configDict(row("Key").ToString.Trim)]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[If(row("Value") Is Nothing, "", row("Value").ToString.Trim)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[out_ConfigDict]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[configDict]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_AppointmentsExcelFullPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[System.IO.Path.Combine(
     Environment.CurrentDirectory,
     configDict("AppointmentsExcelPath").ToString
 )]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[out_ServiceTypes]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable">[dtServiceTypes]</InArgument>
-      </Assign.Value>
-    </Assign>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[out_ServiceTypes]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[dtServiceTypes]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.1090909090909,296.72727272727275" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="99_ErrorHandler - Invoke Workflow File (Workflows\99_ErrorHandler.xaml)" sap:VirtualizedContainerService.HintSize="452.0727272727273,184.14545454545456" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\99_ErrorHandler.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AdditionalInfo">["configPath=" + configPath]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">INIT</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsFatal">True</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Context">01_Init</InArgument>
+                  <InArgument x:TypeArguments="s:Exception" x:Key="in_Exception">[exception]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Rethrow sap:VirtualizedContainerService.HintSize="452.0727272727273,52.36363636363637" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="486.1090909090909,90.76363636363637" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
   </Sequence>
 </Activity>
