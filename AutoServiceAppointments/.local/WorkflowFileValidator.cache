@@ -7,8 +7,8 @@ Workflows/11_GetClientsFromExcel.xaml|639045998454669514
 Workflows/99_ErrorHandler.xaml|639045941180327971
 Workflows/07_CreateCalendarEvent.xaml|639046023914964519
 Workflows/09_ScrapeAvailableSlots.xaml|639046020991328059
-Workflows/10_OffersCampaign.xaml|639046222854121018
-Main.xaml|639046184055419580
+Workflows/10_OffersCampaign.xaml|639046291572415485
+Main.xaml|639046267590344899
 Workflows/12_SendOfferEmails.xaml|639046226387906465
 Workflows/02_GetEmails.xaml|639046183089995628
 Workflows/04_AutomatePDF.xaml|639045958299046023
