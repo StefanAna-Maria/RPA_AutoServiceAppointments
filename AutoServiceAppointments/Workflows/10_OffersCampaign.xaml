@@ -37,6 +37,7 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -87,9 +88,10 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_10_OffersCampaign" sap:VirtualizedContainerService.HintSize="1315,1864" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_10_OffersCampaign" sap:VirtualizedContainerService.HintSize="507,2968" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="programariPath" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="clientEmails" />
@@ -118,6 +120,30 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;OfferText is Nothing? &quot; + (offerText Is Nothing).ToString + &quot; | Length: &quot; + If(offerText Is Nothing, &quot;NULL&quot;, offerText.Length.ToString)]" />
+    <If Condition="[String.IsNullOrWhiteSpace(offerText) AndAlso Not String.IsNullOrWhiteSpace(offerTxtPath)]" sap:VirtualizedContainerService.HintSize="452,910" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,537" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadTextFile File="{x:Null}" Content="[offerText]" DisplayName="Read Text File" FileName="[offerTxtPath]" sap:VirtualizedContainerService.HintSize="416,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;TXT path: &quot; + offerTxtPath]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;OfferText loaded from TXT. Length: &quot; + If(offerText Is Nothing, &quot;NULL&quot;, offerText.Length.ToString)]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;OfferText came from OUT arg. Length: &quot; + If(offerText Is Nothing, &quot;NULL&quot;, offerText.Length.ToString)]" />
+        </Sequence>
+      </If.Else>
+    </If>
     <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[cleanText]</OutArgument>
@@ -126,7 +152,7 @@
         <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(If(offerText, ""), "\s+", " ").Trim]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[String.IsNullOrWhiteSpace(cleanText)]" sap:VirtualizedContainerService.HintSize="452,1309" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[String.IsNullOrWhiteSpace(cleanText)]" sap:VirtualizedContainerService.HintSize="452,1503" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -138,7 +164,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,945" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,1139" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,7 +178,7 @@
               <InArgument x:TypeArguments="x:String">["Oferta Service Auto - Revizie de primavara"]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[offerBody]</OutArgument>
             </Assign.To>
@@ -165,7 +191,7 @@ cleanText &amp; Environment.NewLine &amp; Environment.NewLine &amp;
 "Email: programari@serviceauto.ro"]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[programariPath]</OutArgument>
             </Assign.To>
@@ -173,13 +199,23 @@ cleanText &amp; Environment.NewLine &amp; Environment.NewLine &amp;
               <InArgument x:TypeArguments="x:String">[in_Config("AppointmentsExcelPath").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="11_GetClientsFromExcel - Invoke Workflow File (Workflows\11_GetClientsFromExcel.xaml)" sap:VirtualizedContainerService.HintSize="416,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\11_GetClientsFromExcel.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="11_GetClientsFromExcel - Invoke Workflow File (Workflows\11_GetClientsFromExcel.xaml)" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\11_GetClientsFromExcel.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_ClientEmails">[clientEmails]</OutArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_ProgramariExcelPath">[programariPath]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Clienti: &quot; + clientEmails.Count.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Clienti: &quot; + clientEmails.Count.ToString]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="12_SendOfferEmails - Invoke Workflow File (Workflows\12_SendOfferEmails.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows\12_SendOfferEmails.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TestRecipient" />
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_TestMode">False</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentPath">[offerPdfPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Body">[offerBody]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[offerSubject]</InArgument>
+              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ClientEmails">[clientEmails]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
         </Sequence>
       </If.Else>
     </If>

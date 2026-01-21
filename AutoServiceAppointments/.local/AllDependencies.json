@@ -2,6 +2,134 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
+      "Amazon.Extensions.Configuration.SystemsManager/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.AppConfig": "3.7.0.52",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.1",
+          "AWSSDK.SimpleSystemsManagement": "3.7.4.11",
+          "Microsoft.Extensions.Configuration": "2.0.2",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Extensions.Configuration.SystemsManager.dll": {}
+        }
+      },
+      "AWSSDK.AppConfig/3.7.0.52": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.2.4, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.AppConfig.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Core/3.7.402.10": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.EC2/3.7.28.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.EC2.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.7.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "3.7.0.43",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "AWSSDK.IdentityManagement/3.7.2.48": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.IdentityManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.3.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SimpleSystemsManagement/3.7.5.14": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleSystemsManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Azure.Core/1.18.0": {
         "type": "package",
         "dependencies": {
@@ -936,6 +1064,38 @@
         },
         "build": {
           "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/6.0.2": {
@@ -2124,16 +2284,29 @@
           }
         }
       },
-      "Polly/7.1.0": {
+      "Polly/7.2.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/Polly.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Polly.Contrib.WaitAndRetry/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.Contrib.WaitAndRetry.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -2737,6 +2910,15 @@
           "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
         }
       },
       "System.Data.Odbc/6.0.1": {
@@ -4930,6 +5112,141 @@
           "lib/net6.0-windows7.0/UiPath.Activities.RuntimeGovernance.dll": {}
         }
       },
+      "UiPath.AmazonWebServices.Activities/2.7.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "3.7.402.10",
+          "AWSSDK.EC2": "3.7.28.3",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.1",
+          "AWSSDK.IdentityManagement": "3.7.2.48",
+          "AWSSDK.S3": "3.7.3.1",
+          "AWSSDK.SimpleSystemsManagement": "3.7.5.14",
+          "Amazon.Extensions.Configuration.SystemsManager": "3.0.0",
+          "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Caching.Memory": "6.0.0",
+          "Polly": "7.2.2",
+          "Polly.Contrib.WaitAndRetry": "1.1.1",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Data.DataSetExtensions": "4.5.0",
+          "UiPath.CodedWorkflows": "24.4.2",
+          "UiPath.ConnectionClient": "2.0.7",
+          "UiPath.Platform": "23.4.0",
+          "UiPath.Telemetry.Client": "1.5.3"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.API.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.Design.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
       "UiPath.AppSignatures/25.10.160.17874": {
         "type": "package",
         "compile": {
@@ -6228,7 +6545,7 @@
           }
         }
       },
-      "UiPath.System.Activities/25.10.4": {
+      "UiPath.System.Activities/25.10.5": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "33.0.1",
@@ -6248,7 +6565,7 @@
           "System.Management.Automation": "7.2.24",
           "UiPath.CodedWorkflows": "24.10.1",
           "UiPath.Platform": "25.10.1",
-          "UiPath.System.Activities.Runtime": "25.10.4",
+          "UiPath.System.Activities.Runtime": "25.10.5",
           "UiPath.Telemetry.Client": "2.3.3",
           "net.adamec.lib.common.dmn.engine": "1.1.1"
         },
@@ -6301,10 +6618,10 @@
           }
         }
       },
-      "UiPath.System.Activities.Runtime/25.10.4": {
+      "UiPath.System.Activities.Runtime/25.10.5": {
         "type": "package",
         "dependencies": {
-          "UiPath.System.Activities.Runtime.Windows": "25.10.4"
+          "UiPath.System.Activities.Runtime.Windows": "25.10.5"
         },
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -6313,7 +6630,7 @@
           "lib/net6.0-windows7.0/UiPath.System.Activities.Package.Runtime.dll": {}
         }
       },
-      "UiPath.System.Activities.Runtime.Windows/25.10.4": {
+      "UiPath.System.Activities.Runtime.Windows/25.10.5": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "33.0.1",
@@ -7034,6 +7351,134 @@
       }
     },
     "net8.0-windows7.0/win-x64": {
+      "Amazon.Extensions.Configuration.SystemsManager/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.AppConfig": "3.7.0.52",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.1",
+          "AWSSDK.SimpleSystemsManagement": "3.7.4.11",
+          "Microsoft.Extensions.Configuration": "2.0.2",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Extensions.Configuration.SystemsManager.dll": {}
+        }
+      },
+      "AWSSDK.AppConfig/3.7.0.52": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.2.4, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.AppConfig.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Core/3.7.402.10": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.EC2/3.7.28.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.EC2.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.7.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "3.7.0.43",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "AWSSDK.IdentityManagement/3.7.2.48": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.IdentityManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.S3/3.7.3.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "AWSSDK.SimpleSystemsManagement/3.7.5.14": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.8, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleSystemsManagement.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Azure.Core/1.18.0": {
         "type": "package",
         "dependencies": {
@@ -7968,6 +8413,38 @@
         },
         "build": {
           "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/6.0.2": {
@@ -9057,16 +9534,29 @@
           }
         }
       },
-      "Polly/7.1.0": {
+      "Polly/7.2.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/Polly.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Polly.Contrib.WaitAndRetry/1.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.Contrib.WaitAndRetry.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -9841,6 +10331,15 @@
           "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
         }
       },
       "System.Data.Odbc/6.0.1": {
@@ -11828,6 +12327,141 @@
           "lib/net6.0-windows7.0/UiPath.Activities.RuntimeGovernance.dll": {}
         }
       },
+      "UiPath.AmazonWebServices.Activities/2.7.3": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "3.7.402.10",
+          "AWSSDK.EC2": "3.7.28.3",
+          "AWSSDK.Extensions.NETCore.Setup": "3.7.1",
+          "AWSSDK.IdentityManagement": "3.7.2.48",
+          "AWSSDK.S3": "3.7.3.1",
+          "AWSSDK.SimpleSystemsManagement": "3.7.5.14",
+          "Amazon.Extensions.Configuration.SystemsManager": "3.0.0",
+          "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Caching.Memory": "6.0.0",
+          "Polly": "7.2.2",
+          "Polly.Contrib.WaitAndRetry": "1.1.1",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Data.DataSetExtensions": "4.5.0",
+          "UiPath.CodedWorkflows": "24.4.2",
+          "UiPath.ConnectionClient": "2.0.7",
+          "UiPath.Platform": "23.4.0",
+          "UiPath.Telemetry.Client": "1.5.3"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.API.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.Design.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.dll": {},
+          "lib/net6.0-windows7.0/UiPath.AmazonWebServices.dll": {}
+        },
+        "resource": {
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "es-MX"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.Design.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
       "UiPath.AppSignatures/25.10.160.17874": {
         "type": "package",
         "compile": {
@@ -13126,7 +13760,7 @@
           }
         }
       },
-      "UiPath.System.Activities/25.10.4": {
+      "UiPath.System.Activities/25.10.5": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "33.0.1",
@@ -13146,7 +13780,7 @@
           "System.Management.Automation": "7.2.24",
           "UiPath.CodedWorkflows": "24.10.1",
           "UiPath.Platform": "25.10.1",
-          "UiPath.System.Activities.Runtime": "25.10.4",
+          "UiPath.System.Activities.Runtime": "25.10.5",
           "UiPath.Telemetry.Client": "2.3.3",
           "net.adamec.lib.common.dmn.engine": "1.1.1"
         },
@@ -13199,10 +13833,10 @@
           }
         }
       },
-      "UiPath.System.Activities.Runtime/25.10.4": {
+      "UiPath.System.Activities.Runtime/25.10.5": {
         "type": "package",
         "dependencies": {
-          "UiPath.System.Activities.Runtime.Windows": "25.10.4"
+          "UiPath.System.Activities.Runtime.Windows": "25.10.5"
         },
         "compile": {
           "lib/net6.0-windows7.0/_._": {}
@@ -13211,7 +13845,7 @@
           "lib/net6.0-windows7.0/UiPath.System.Activities.Package.Runtime.dll": {}
         }
       },
-      "UiPath.System.Activities.Runtime.Windows/25.10.4": {
+      "UiPath.System.Activities.Runtime.Windows/25.10.5": {
         "type": "package",
         "dependencies": {
           "CsvHelper": "33.0.1",
@@ -13933,6 +14567,197 @@
     }
   },
   "libraries": {
+    "Amazon.Extensions.Configuration.SystemsManager/3.0.0": {
+      "sha512": "dNJjOd88rqdUJ/paOYhPR3I8ZGoyfsuR67Xt9er/Kz4Qc8h0AvQ1TdpjGkEHY8t61mRwb0A7qOHgqjQji20zrA==",
+      "type": "package",
+      "path": "amazon.extensions.configuration.systemsmanager/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "amazon.extensions.configuration.systemsmanager.3.0.0.nupkg.sha512",
+        "amazon.extensions.configuration.systemsmanager.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Amazon.Extensions.Configuration.SystemsManager.dll"
+      ]
+    },
+    "AWSSDK.AppConfig/3.7.0.52": {
+      "sha512": "59H/wwUHop14ReD5eIxY9yNtIWQZROjPpolDHFCvQjyraLXnqHGegc8xXBW0M65o+Cs1jPykIjVUqISOP4iJkQ==",
+      "type": "package",
+      "path": "awssdk.appconfig/3.7.0.52",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.AppConfig.CodeAnalysis.dll",
+        "awssdk.appconfig.3.7.0.52.nupkg.sha512",
+        "awssdk.appconfig.nuspec",
+        "lib/net35/AWSSDK.AppConfig.dll",
+        "lib/net35/AWSSDK.AppConfig.pdb",
+        "lib/net35/AWSSDK.AppConfig.xml",
+        "lib/net45/AWSSDK.AppConfig.dll",
+        "lib/net45/AWSSDK.AppConfig.pdb",
+        "lib/net45/AWSSDK.AppConfig.xml",
+        "lib/netcoreapp3.1/AWSSDK.AppConfig.dll",
+        "lib/netcoreapp3.1/AWSSDK.AppConfig.pdb",
+        "lib/netcoreapp3.1/AWSSDK.AppConfig.xml",
+        "lib/netstandard2.0/AWSSDK.AppConfig.dll",
+        "lib/netstandard2.0/AWSSDK.AppConfig.pdb",
+        "lib/netstandard2.0/AWSSDK.AppConfig.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Core/3.7.402.10": {
+      "sha512": "YqwFZD2h6++mjPV9xCL/C27NMGnrihFcDcT68AjOazVO6Gi1jsVfxf2w7VwvGjiR20bIGIcHyRQXKxsU+nJ5SQ==",
+      "type": "package",
+      "path": "awssdk.core/3.7.402.10",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.3.7.402.10.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.pdb",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.EC2/3.7.28.3": {
+      "sha512": "yUDrRBE7yalexzVPUIg0SOflnWIipOCmbRA+gaW8sOPds7lAcfV1dKccc5638astTXAp0uH/Nl3gm4yR8XKplg==",
+      "type": "package",
+      "path": "awssdk.ec2/3.7.28.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.EC2.CodeAnalysis.dll",
+        "awssdk.ec2.3.7.28.3.nupkg.sha512",
+        "awssdk.ec2.nuspec",
+        "lib/net35/AWSSDK.EC2.dll",
+        "lib/net35/AWSSDK.EC2.pdb",
+        "lib/net35/AWSSDK.EC2.xml",
+        "lib/net45/AWSSDK.EC2.dll",
+        "lib/net45/AWSSDK.EC2.pdb",
+        "lib/net45/AWSSDK.EC2.xml",
+        "lib/netcoreapp3.1/AWSSDK.EC2.dll",
+        "lib/netcoreapp3.1/AWSSDK.EC2.pdb",
+        "lib/netcoreapp3.1/AWSSDK.EC2.xml",
+        "lib/netstandard2.0/AWSSDK.EC2.dll",
+        "lib/netstandard2.0/AWSSDK.EC2.pdb",
+        "lib/netstandard2.0/AWSSDK.EC2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.Extensions.NETCore.Setup/3.7.1": {
+      "sha512": "cm7D75uispA3h/WwMEQVBMmFPPFwRvFQz8fyLwJEB9uqWYfTOMrRTcynMxHnrdoMyQnfCjByRTzHuFgWELmB6Q==",
+      "type": "package",
+      "path": "awssdk.extensions.netcore.setup/3.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.extensions.netcore.setup.3.7.1.nupkg.sha512",
+        "awssdk.extensions.netcore.setup.nuspec",
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll",
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb"
+      ]
+    },
+    "AWSSDK.IdentityManagement/3.7.2.48": {
+      "sha512": "QoLqHiP7S0ePylUdqpkgBfJ7Suqo1XWG5jrAePzfyJeq1ZnIA1VN+0EfhXIa/Ak9dQTATnmpaYFx7ugUz0cRBQ==",
+      "type": "package",
+      "path": "awssdk.identitymanagement/3.7.2.48",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.IdentityManagement.CodeAnalysis.dll",
+        "awssdk.identitymanagement.3.7.2.48.nupkg.sha512",
+        "awssdk.identitymanagement.nuspec",
+        "lib/net35/AWSSDK.IdentityManagement.dll",
+        "lib/net35/AWSSDK.IdentityManagement.pdb",
+        "lib/net35/AWSSDK.IdentityManagement.xml",
+        "lib/net45/AWSSDK.IdentityManagement.dll",
+        "lib/net45/AWSSDK.IdentityManagement.pdb",
+        "lib/net45/AWSSDK.IdentityManagement.xml",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.dll",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.pdb",
+        "lib/netcoreapp3.1/AWSSDK.IdentityManagement.xml",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.dll",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.pdb",
+        "lib/netstandard2.0/AWSSDK.IdentityManagement.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.S3/3.7.3.1": {
+      "sha512": "BFcyzTPHoE0fjDBrippAevW46CzMh0d9UZeiOjX3tI3+H8GqCJCoX/bi00pJu0w765BNE/MaUgwqSy1bA1CUIg==",
+      "type": "package",
+      "path": "awssdk.s3/3.7.3.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
+        "awssdk.s3.3.7.3.1.nupkg.sha512",
+        "awssdk.s3.nuspec",
+        "lib/net35/AWSSDK.S3.dll",
+        "lib/net35/AWSSDK.S3.pdb",
+        "lib/net35/AWSSDK.S3.xml",
+        "lib/net45/AWSSDK.S3.dll",
+        "lib/net45/AWSSDK.S3.pdb",
+        "lib/net45/AWSSDK.S3.xml",
+        "lib/netcoreapp3.1/AWSSDK.S3.dll",
+        "lib/netcoreapp3.1/AWSSDK.S3.pdb",
+        "lib/netcoreapp3.1/AWSSDK.S3.xml",
+        "lib/netstandard2.0/AWSSDK.S3.dll",
+        "lib/netstandard2.0/AWSSDK.S3.pdb",
+        "lib/netstandard2.0/AWSSDK.S3.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SimpleSystemsManagement/3.7.5.14": {
+      "sha512": "FX3jYurD7F4Y/BTO8yT5Lzan0Dom9yBQ1i1B1oANuAD3Rl5mungmzkaihn46xF5lSMynpe35PqWeot13tVGXVQ==",
+      "type": "package",
+      "path": "awssdk.simplesystemsmanagement/3.7.5.14",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SimpleSystemsManagement.CodeAnalysis.dll",
+        "awssdk.simplesystemsmanagement.3.7.5.14.nupkg.sha512",
+        "awssdk.simplesystemsmanagement.nuspec",
+        "lib/net35/AWSSDK.SimpleSystemsManagement.dll",
+        "lib/net35/AWSSDK.SimpleSystemsManagement.pdb",
+        "lib/net35/AWSSDK.SimpleSystemsManagement.xml",
+        "lib/net45/AWSSDK.SimpleSystemsManagement.dll",
+        "lib/net45/AWSSDK.SimpleSystemsManagement.pdb",
+        "lib/net45/AWSSDK.SimpleSystemsManagement.xml",
+        "lib/netcoreapp3.1/AWSSDK.SimpleSystemsManagement.dll",
+        "lib/netcoreapp3.1/AWSSDK.SimpleSystemsManagement.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SimpleSystemsManagement.xml",
+        "lib/netstandard2.0/AWSSDK.SimpleSystemsManagement.dll",
+        "lib/netstandard2.0/AWSSDK.SimpleSystemsManagement.pdb",
+        "lib/netstandard2.0/AWSSDK.SimpleSystemsManagement.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Azure.Core/1.18.0": {
       "sha512": "h0DQLyIKvowm6n9XV2njDiiI5Et0QecpE2VcGfhps9J4m9MJ6tBD4Qxl+fbL8k/41sD7UXP4nAWgxC81oV11oQ==",
       "type": "package",
@@ -15461,6 +16286,32 @@
         "microsoft.extensions.caching.memory.9.0.3.nupkg.sha512",
         "microsoft.extensions.caching.memory.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration/2.0.2": {
+      "sha512": "L51zGiDlJ4dPpKhFnP6grn2AQlZix9SvyEJ+HO7j/C2lyGA+cd6aDLqJTUhbXZGZ9zaa11eHvz14zG9HV24DRA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
+        "microsoft.extensions.configuration.2.0.2.nupkg.sha512",
+        "microsoft.extensions.configuration.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/2.0.2": {
+      "sha512": "ZIuzorFmrbHqS8xucmLDFl4JtdaexHTpyS0+tdm6pRAB7dLp6ERQloGeUwuREBoz/ciW/Su21mgISCtXH+j1Eg==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.2.0.2.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.DependencyInjection/6.0.2": {
@@ -17189,19 +18040,50 @@
         "ntextcat.nuspec"
       ]
     },
-    "Polly/7.1.0": {
-      "sha512": "mpQsvlEn4ipgICh5CGyVLPV93RFVzOrBG7wPZfzY8gExh7XgWQn0GCDY9nudbUEJ12UiGPP9i4+CohghBvzhmg==",
+    "Polly/7.2.2": {
+      "sha512": "E6CeKyS513j7taKAq4q2MESDBvzuzWnR1rQ2Y2zqJvpiVtKMm699Aubb20MUPBDmb0Ov8PmcLHTCVFdCjoy2kA==",
       "type": "package",
-      "path": "polly/7.1.0",
+      "path": "polly/7.2.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net461/Polly.dll",
+        "lib/net461/Polly.pdb",
+        "lib/net461/Polly.xml",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net472/Polly.xml",
         "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
         "lib/netstandard1.1/Polly.xml",
         "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
         "lib/netstandard2.0/Polly.xml",
-        "polly.7.1.0.nupkg.sha512",
+        "polly.7.2.2.nupkg.sha512",
         "polly.nuspec"
+      ]
+    },
+    "Polly.Contrib.WaitAndRetry/1.1.1": {
+      "sha512": "1MUQLiSo4KDkQe6nzQRhIU05lm9jlexX5BVsbuw0SL82ynZ+GzAHQxJVDPVBboxV37Po3SG077aX8DuSy8TkaA==",
+      "type": "package",
+      "path": "polly.contrib.waitandretry/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Polly.Contrib.WaitAndRetry.dll",
+        "lib/net461/Polly.Contrib.WaitAndRetry.pdb",
+        "lib/net461/Polly.Contrib.WaitAndRetry.xml",
+        "lib/net472/Polly.Contrib.WaitAndRetry.dll",
+        "lib/net472/Polly.Contrib.WaitAndRetry.pdb",
+        "lib/net472/Polly.Contrib.WaitAndRetry.xml",
+        "lib/netstandard1.1/Polly.Contrib.WaitAndRetry.dll",
+        "lib/netstandard1.1/Polly.Contrib.WaitAndRetry.pdb",
+        "lib/netstandard1.1/Polly.Contrib.WaitAndRetry.xml",
+        "lib/netstandard2.0/Polly.Contrib.WaitAndRetry.dll",
+        "lib/netstandard2.0/Polly.Contrib.WaitAndRetry.pdb",
+        "lib/netstandard2.0/Polly.Contrib.WaitAndRetry.xml",
+        "polly.contrib.waitandretry.1.1.1.nupkg.sha512",
+        "polly.contrib.waitandretry.nuspec"
       ]
     },
     "RadCommons.core/2.0.1": {
@@ -18876,6 +19758,25 @@
         "ref/xamarinwatchos10/_._",
         "system.console.4.3.0.nupkg.sha512",
         "system.console.nuspec"
+      ]
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "type": "package",
+      "path": "system.data.datasetextensions/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "system.data.datasetextensions.4.5.0.nupkg.sha512",
+        "system.data.datasetextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Data.Odbc/6.0.1": {
@@ -23795,6 +24696,117 @@
         "uipath.activities.runtimegovernance.nuspec"
       ]
     },
+    "UiPath.AmazonWebServices.Activities/2.7.3": {
+      "sha512": "s9e3ZfCjGGrqtDGX5QxLCJ3tq04ASIu6nG97nbtgdlYVf5Dh6z/HC+I7/tbJEupS5/BNRLgjxMRQFLMBs7Pqyw==",
+      "type": "package",
+      "path": "uipath.amazonwebservices.activities/2.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/UiPath.AmazonWebServices.Activities.Design.dll",
+        "lib/net461/UiPath.AmazonWebServices.Activities.dll",
+        "lib/net461/UiPath.AmazonWebServices.dll",
+        "lib/net461/de/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/de/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/de/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/es-MX/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/es-MX/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/es-MX/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/es/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/es/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/es/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/fr/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/fr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/fr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/ja/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/ja/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/ja/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/ko/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/ko/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/ko/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/pt-BR/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/pt-BR/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/pt-BR/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/pt/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/pt/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/pt/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/ru/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/ru/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/ru/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/tr/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/tr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net461/tr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/zh-CN/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/zh-CN/UiPath.AmazonWebServices.resources.dll",
+        "lib/net461/zh-TW/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net461/zh-TW/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.API.dll",
+        "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.Design.dll",
+        "lib/net6.0-windows7.0/UiPath.AmazonWebServices.Activities.dll",
+        "lib/net6.0-windows7.0/UiPath.AmazonWebServices.dll",
+        "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/de/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/es-MX/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/es/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/fr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ja/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ko/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/pt-BR/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/pt/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/ru/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0-windows7.0/tr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.Design.resources.dll",
+        "lib/net6.0-windows7.0/zh-TW/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/UiPath.AmazonWebServices.Activities.API.dll",
+        "lib/net6.0/UiPath.AmazonWebServices.Activities.dll",
+        "lib/net6.0/UiPath.AmazonWebServices.dll",
+        "lib/net6.0/de/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/de/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/es-MX/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/es-MX/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/es/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/es/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/fr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/fr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/ja/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/ja/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/ko/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/ko/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/pt-BR/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/pt-BR/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/pt/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/pt/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/ru/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/ru/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/tr/UiPath.AmazonWebServices.Activities.resources.dll",
+        "lib/net6.0/tr/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/zh-CN/UiPath.AmazonWebServices.resources.dll",
+        "lib/net6.0/zh-TW/UiPath.AmazonWebServices.Activities.resources.dll",
+        "uipath.amazonwebservices.activities.2.7.3.nupkg.sha512",
+        "uipath.amazonwebservices.activities.nuspec"
+      ]
+    },
     "UiPath.AppSignatures/25.10.160.17874": {
       "sha512": "jnjVjaZN7cq2qB4fqXrLrx7HoaxKUc41sRsVVAqmF/kmTdNpFZMzyo4SuNrH2BJTPLQkuKfOMLkd7ebjzjTXrw==",
       "type": "package",
@@ -25098,10 +26110,10 @@
         "uipath.platform.nuspec"
       ]
     },
-    "UiPath.System.Activities/25.10.4": {
-      "sha512": "xGQfKisbomw/Wr9Eh3B0sS5FFEofichRCpsSYo/SlXlcOvlkgs55646qi7I0FveBQCMWHpF/o6ct8VyjaVU8xQ==",
+    "UiPath.System.Activities/25.10.5": {
+      "sha512": "jIkh6h6shD0uvv91+byjU54FLc2N4idR5hDUUZ37KR2krchdLFB24Ouq+3/zglzV5cqsn8sCyhn+GxzCE15pjg==",
       "type": "package",
-      "path": "uipath.system.activities/25.10.4",
+      "path": "uipath.system.activities/25.10.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -25122,27 +26134,27 @@
         "lib/net6.0-windows7.0/zh-TW/UiPath.System.Activities.Design.resources.dll",
         "lib/net6.0-windows7.0/zu/UiPath.System.Activities.Design.resources.dll",
         "lib/net6.0/UiPath.System.Activities.ViewModels.dll",
-        "uipath.system.activities.25.10.4.nupkg.sha512",
+        "uipath.system.activities.25.10.5.nupkg.sha512",
         "uipath.system.activities.nuspec"
       ]
     },
-    "UiPath.System.Activities.Runtime/25.10.4": {
-      "sha512": "fKmAytFZC0ByuiRwkN6npI94QQRRaQFGUfh5d12cdO7EL36wDU7Z2yhoJqBsZ9/nsJXmXEg26fJboNmwuotqFw==",
+    "UiPath.System.Activities.Runtime/25.10.5": {
+      "sha512": "eETPYnxUL5F/DC/khSo2NhEQuWTyqrHSKbtFjCEZkk1xtXVHm4xGjO4rx9fPxzU9TVL58Hs85xt72cdg1UmTIw==",
       "type": "package",
-      "path": "uipath.system.activities.runtime/25.10.4",
+      "path": "uipath.system.activities.runtime/25.10.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0-windows7.0/UiPath.System.Activities.Package.Runtime.dll",
         "lib/net6.0/UiPath.System.Activities.Package.Runtime.dll",
-        "uipath.system.activities.runtime.25.10.4.nupkg.sha512",
+        "uipath.system.activities.runtime.25.10.5.nupkg.sha512",
         "uipath.system.activities.runtime.nuspec"
       ]
     },
-    "UiPath.System.Activities.Runtime.Windows/25.10.4": {
-      "sha512": "/leADebLCxoeEfogSv1LSlp1J1h3Baaaj2WBcHAV2grdMTbXyUF2ltg138CPGLTPjmCpCjLe2oXLHCN/mOTKCg==",
+    "UiPath.System.Activities.Runtime.Windows/25.10.5": {
+      "sha512": "WvsQSL100/RXFlq54XEdkZEi/bsgN1WK5oGWrnPaktooyr8gje2S+qsGF4uI62uGsvJGzLt1T2vkxlmAJnTmUA==",
       "type": "package",
-      "path": "uipath.system.activities.runtime.windows/25.10.4",
+      "path": "uipath.system.activities.runtime.windows/25.10.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -25181,7 +26193,7 @@
         "lib/net6.0-windows7.0/zh-CN/UiPath.System.Activities.resources.dll",
         "lib/net6.0-windows7.0/zh-TW/UiPath.System.Activities.resources.dll",
         "lib/net6.0-windows7.0/zu/UiPath.System.Activities.resources.dll",
-        "uipath.system.activities.runtime.windows.25.10.4.nupkg.sha512",
+        "uipath.system.activities.runtime.windows.25.10.5.nupkg.sha512",
         "uipath.system.activities.runtime.windows.nuspec"
       ]
     },
@@ -26259,13 +27271,14 @@
   "projectFileDependencyGroups": {
     "": [],
     "net8.0-windows7.0": [
+      "UiPath.AmazonWebServices.Activities >= 2.7.3 <= 2.7.3",
       "UiPath.DocumentUnderstanding.Activities >= 2.17.2 <= 2.17.2",
       "UiPath.Excel.Activities >= 3.3.1 <= 3.3.1",
       "UiPath.GSuite.Activities >= 3.5.11 <= 3.5.11",
       "UiPath.Mail.Activities >= 2.5.10 <= 2.5.10",
       "UiPath.MicrosoftOffice365.Activities >= 3.5.10 <= 3.5.10",
       "UiPath.PDF.Activities >= 3.25.2 <= 3.25.2",
-      "UiPath.System.Activities >= 25.10.4 <= 25.10.4",
+      "UiPath.System.Activities >= 25.10.5 <= 25.10.5",
       "UiPath.UIAutomation.Activities >= 25.10.24 <= 25.10.24",
       "UiPath.Word.Activities >= 2.3.1 <= 2.3.1"
     ]
@@ -26292,6 +27305,11 @@
     "frameworks": {
       "net8.0-windows7.0": {
         "dependencies": {
+          "UiPath.AmazonWebServices.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[2.7.3, 2.7.3]"
+          },
           "UiPath.DocumentUnderstanding.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -26325,7 +27343,7 @@
           "UiPath.System.Activities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[25.10.4, 25.10.4]"
+            "version": "[25.10.5, 25.10.5]"
           },
           "UiPath.UIAutomation.Activities": {
             "include": "Runtime",
@@ -26338,7 +27356,7 @@
             "version": "[2.3.1, 2.3.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\anama\\AppData\\Local\\Programs\\UiPathPlatform\\Studio\\26.0.182-cloud.21895\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\anama\\AppData\\Local\\Programs\\UiPathPlatform\\Studio\\26.0.185-cloud.22017\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

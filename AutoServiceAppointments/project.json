@@ -4,13 +4,14 @@
   "description": "Automated assistant for managing auto service appointment requests",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.AmazonWebServices.Activities": "[2.7.3]",
     "UiPath.DocumentUnderstanding.Activities": "[2.17.2]",
     "UiPath.Excel.Activities": "[3.3.1]",
     "UiPath.GSuite.Activities": "[3.5.11]",
     "UiPath.Mail.Activities": "[2.5.10]",
     "UiPath.MicrosoftOffice365.Activities": "[3.5.10]",
     "UiPath.PDF.Activities": "[3.25.2]",
-    "UiPath.System.Activities": "[25.10.4]",
+    "UiPath.System.Activities": "[25.10.5]",
     "UiPath.UIAutomation.Activities": "[25.10.24]",
     "UiPath.Word.Activities": "[2.3.1]"
   },

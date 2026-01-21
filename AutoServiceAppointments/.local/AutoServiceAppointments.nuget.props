@@ -17,5 +17,11 @@
     <PkgXceed_Words_NET Condition=" '$(PkgXceed_Words_NET)' == '' ">C:\Users\anama\.nuget\packages\xceed.words.net\5.0.25228.6154</PkgXceed_Words_NET>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\anama\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.3</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgUiPath_Mail_Activities Condition=" '$(PkgUiPath_Mail_Activities)' == '' ">C:\Users\anama\.nuget\packages\uipath.mail.activities\2.5.10</PkgUiPath_Mail_Activities>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\anama\.nuget\packages\awssdk.core\3.7.402.10</PkgAWSSDK_Core>
+    <PkgAWSSDK_SimpleSystemsManagement Condition=" '$(PkgAWSSDK_SimpleSystemsManagement)' == '' ">C:\Users\anama\.nuget\packages\awssdk.simplesystemsmanagement\3.7.5.14</PkgAWSSDK_SimpleSystemsManagement>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\anama\.nuget\packages\awssdk.s3\3.7.3.1</PkgAWSSDK_S3>
+    <PkgAWSSDK_IdentityManagement Condition=" '$(PkgAWSSDK_IdentityManagement)' == '' ">C:\Users\anama\.nuget\packages\awssdk.identitymanagement\3.7.2.48</PkgAWSSDK_IdentityManagement>
+    <PkgAWSSDK_EC2 Condition=" '$(PkgAWSSDK_EC2)' == '' ">C:\Users\anama\.nuget\packages\awssdk.ec2\3.7.28.3</PkgAWSSDK_EC2>
+    <PkgAWSSDK_AppConfig Condition=" '$(PkgAWSSDK_AppConfig)' == '' ">C:\Users\anama\.nuget\packages\awssdk.appconfig\3.7.0.52</PkgAWSSDK_AppConfig>
   </PropertyGroup>
 </Project>
