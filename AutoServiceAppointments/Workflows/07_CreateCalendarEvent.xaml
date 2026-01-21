@@ -134,7 +134,7 @@
       <AssemblyReference>UiPath.GSuite</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_07_CreateCalendarEvent" sap:VirtualizedContainerService.HintSize="860.6181818181819,5192.727272727273" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_07_CreateCalendarEvent" sap:VirtualizedContainerService.HintSize="673,5151" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="description" />
       <Variable x:TypeArguments="x:String" Name="title" />
@@ -153,7 +153,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_23">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_23">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[nume]</OutArgument>
       </Assign.To>
@@ -161,7 +161,7 @@
         <InArgument x:TypeArguments="x:String">[in_Nume.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_24">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_24">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[masina]</OutArgument>
       </Assign.To>
@@ -169,7 +169,7 @@
         <InArgument x:TypeArguments="x:String">[in_Masina.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_25">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_25">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[serviciu]</OutArgument>
       </Assign.To>
@@ -177,7 +177,7 @@
         <InArgument x:TypeArguments="x:String">[in_Serviciu.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_26">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_26">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dataProg]</OutArgument>
       </Assign.To>
@@ -185,7 +185,7 @@
         <InArgument x:TypeArguments="x:String">[in_Data.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_27">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_27">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[oraProg]</OutArgument>
       </Assign.To>
@@ -193,7 +193,7 @@
         <InArgument x:TypeArguments="x:String">[in_Ora.Trim()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[durataMin]</OutArgument>
       </Assign.To>
@@ -201,27 +201,27 @@
         <InArgument x:TypeArguments="x:Int32">[in_DefaultDurationMinutes]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtServiceTypes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="487.8545454545455,774.9818181818182" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtServiceTypes]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,769" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="srvRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.1090909090909,591.709090909091" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,587" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[srvRow(&quot;TipServiciu&quot;).ToString.Trim.Equals(serviciu, StringComparison.OrdinalIgnoreCase)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,527.1272727272727" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[srvRow(&quot;TipServiciu&quot;).ToString.Trim.Equals(serviciu, StringComparison.OrdinalIgnoreCase)]" sap:VirtualizedContainerService.HintSize="452,523" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,297.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,295" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_17">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[durataMin]</OutArgument>
                     </Assign.To>
@@ -233,7 +233,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,95.12727272727274" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,7 +246,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[isFree]</OutArgument>
       </Assign.To>
@@ -254,27 +254,27 @@
         <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtSlots]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="487.8545454545455,774.9818181818182" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtSlots]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,769" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="slotRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486.1090909090909,591.709090909091" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,587" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[slotRow(&quot;Data&quot;).ToString.Trim = dataProg AndAlso&#xA;slotRow(&quot;OraStart&quot;).ToString.Trim = oraProg AndAlso&#xA;slotRow(&quot;Status&quot;).ToString.Trim.Equals(&quot;Free&quot;, StringComparison.OrdinalIgnoreCase)]" sap:VirtualizedContainerService.HintSize="452.0727272727273,527.1272727272727" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[slotRow(&quot;Data&quot;).ToString.Trim = dataProg AndAlso&#xA;slotRow(&quot;OraStart&quot;).ToString.Trim = oraProg AndAlso&#xA;slotRow(&quot;Status&quot;).ToString.Trim.Equals(&quot;Free&quot;, StringComparison.OrdinalIgnoreCase)]" sap:VirtualizedContainerService.HintSize="452,523" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450.32727272727277,297.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,295" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_16">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_16">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[isFree]</OutArgument>
                     </Assign.To>
@@ -286,7 +286,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450.32727272727277,95.12727272727274" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,15 +299,15 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <If Condition="[Not isFree]" sap:VirtualizedContainerService.HintSize="487.8545454545455,2386.0363636363636" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not isFree]" sap:VirtualizedContainerService.HintSize="488,2365" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486.1090909090909,416.2909090909091" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,413" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
             </Assign.To>
@@ -315,7 +315,7 @@
               <InArgument x:TypeArguments="x:String">["Rejected"]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,171.05454545454546" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign sap:VirtualizedContainerService.HintSize="452,170" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Reason]</OutArgument>
             </Assign.To>
@@ -326,13 +326,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486.1090909090909,1839.709090909091" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1822" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_10">
             <Assign.To>
               <OutArgument x:TypeArguments="s:DateTime">[startDT]</OutArgument>
             </Assign.To>
@@ -344,7 +344,7 @@
 )]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_11">
             <Assign.To>
               <OutArgument x:TypeArguments="s:DateTime">[endDT]</OutArgument>
             </Assign.To>
@@ -352,7 +352,7 @@
               <InArgument x:TypeArguments="s:DateTime">[startDT.AddMinutes(durataMin)]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_12">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[title]</OutArgument>
             </Assign.To>
@@ -360,7 +360,7 @@
               <InArgument x:TypeArguments="x:String">["Programare - " + nume + " - " + serviciu]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="452.0727272727273,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[description]</OutArgument>
             </Assign.To>
@@ -371,7 +371,7 @@
 "Durata (min): " + durataMin.ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="andreeadima1888@gmail.com" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Google Workspace Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="452.0727272727273,1052.509090909091" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="E9D2DB0">
+          <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="ana.maria.stefan03@gmail.com" AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Google Workspace Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="452,1042" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="E9D2DB0">
             <uga:GSuiteApplicationScope.AuthenticationScopes>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
                 <InArgument x:TypeArguments="x:String">https://www.googleapis.com/auth/calendar</InArgument>
@@ -382,15 +382,15 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.32727272727277,814.2545454545455" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,806" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uga:CreateEventConnections Calendar="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Location="{x:Null}" OptionalAttendees="{x:Null}" Recurrence="{x:Null}" RequiredAttendees="{x:Null}" ResourceAttendees="{x:Null}" Result="{x:Null}" AddConferenceData="False" AllDayEvent="False" AuthScopesInvalid="False" BrowserCalendarFriendlyName="andreeadima1888@gmail.com" BrowserCalendarId="andreeadima1888@gmail.com" CalendarInputMode="Browse" DisplayName="Create Event" EndDateTime="[endDT]" GuestCanInviteOthers="True" GuestCanModifyEvent="False" GuestCanSeeAttendeesList="True" sap:VirtualizedContainerService.HintSize="416.2909090909091,397.9636363636364" sap2010:WorkflowViewState.IdRef="CreateEventConnections_1" PreferredReturnTimezone="UTC" SendNotification="ALL" ShowAs="Opaque" StartDateTime="[startDT]" Timezone="Europe/Bucharest" Title="[title]" UseConnectionService="False" Visibility="DEFAULT">
+                  <uga:CreateEventConnections Calendar="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Location="{x:Null}" OptionalAttendees="{x:Null}" Recurrence="{x:Null}" RequiredAttendees="{x:Null}" ResourceAttendees="{x:Null}" Result="{x:Null}" AddConferenceData="False" AllDayEvent="False" AuthScopesInvalid="False" BrowserCalendarFriendlyName="Family" BrowserCalendarId="family13345203474581339643@group.calendar.google.com" CalendarInputMode="Browse" DisplayName="Create Event" EndDateTime="[endDT]" GuestCanInviteOthers="True" GuestCanModifyEvent="False" GuestCanSeeAttendeesList="True" sap:VirtualizedContainerService.HintSize="416,393" sap2010:WorkflowViewState.IdRef="CreateEventConnections_1" PreferredReturnTimezone="UTC" SendNotification="ALL" ShowAs="Opaque" StartDateTime="[startDT]" Timezone="Europe/Bucharest" Title="[title]" UseConnectionService="False" Visibility="DEFAULT">
                     <uga:CreateEventConnections.CalendarArgument>
-                      <ugacm:CalendarArgument Backup="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" BrowserId="andreeadima1888@gmail.com" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2NhbGVuZGFyIl0sIlVzZXJJZCI6IkU5RDJEQjAiLCJFbWFpbEFkZHJlc3MiOm51bGwsIkFjY291bnQiOiJhbmRyZWVhZGltYTE4ODhAZ21haWwuY29tIiwiU3RvcmFnZSI6eyJMb2NhbEZvbGRlciI6IkdTdWl0ZSIsIk9yY2hlc3RyYXRvckZvbGRlciI6IiIsIkxvY2F0aW9uIjowfX0=" FriendlyName="andreeadima1888@gmail.com" InputMode="Browse" />
+                      <ugacm:CalendarArgument Backup="{x:Reference __ReferenceID0}" ConnectionDescriptor="{x:Null}" Existing="{x:Null}" BrowserId="family13345203474581339643@group.calendar.google.com" ConnectionKey="eyJPQXV0aDJBcHBEYXRhIjp7IkNsaWVudElkIjoiIiwiQ2xpZW50U2VjcmV0IjoiIn0sIlNjb3BlcyI6WyJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2NhbGVuZGFyIl0sIlVzZXJJZCI6IkU5RDJEQjAiLCJFbWFpbEFkZHJlc3MiOm51bGwsIkFjY291bnQiOiJhbmEubWFyaWEuc3RlZmFuMDNAZ21haWwuY29tIiwiU3RvcmFnZSI6eyJMb2NhbEZvbGRlciI6IkdTdWl0ZSIsIk9yY2hlc3RyYXRvckZvbGRlciI6IiIsIkxvY2F0aW9uIjowfX0=" FriendlyName="Family" InputMode="Browse" />
                     </uga:CreateEventConnections.CalendarArgument>
                     <uga:CreateEventConnections.CalendarIdBackup>
                       <usau:BackupSlot x:TypeArguments="ugace:ECalendarMode" x:Name="__ReferenceID0" StoredValue="Browse">
@@ -409,7 +409,7 @@
                       <InArgument x:TypeArguments="x:String" />
                     </uga:CreateEventConnections.Description>
                   </uga:CreateEventConnections>
-                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,180.65454545454546" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                     </Assign.To>
@@ -417,7 +417,7 @@
                       <InArgument x:TypeArguments="x:String">["Processed"]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,171.05454545454546" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[out_Reason]</OutArgument>
                     </Assign.To>

@@ -26271,16 +26271,16 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Iulia\\.nuget\\packages\\": {},
+    "C:\\Users\\anama\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "AutoServiceAppointments",
       "projectName": "AutoServiceAppointments",
-      "projectPath": "D:\\FMI CTI\\AN IV\\RPA_Uipath\\PROJECT\\RPA_AutoServiceAppointments\\AutoServiceAppointments\\.local",
-      "packagesPath": "C:\\Users\\Iulia\\.nuget\\packages\\",
-      "outputPath": "D:\\FMI CTI\\AN IV\\RPA_Uipath\\PROJECT\\RPA_AutoServiceAppointments\\AutoServiceAppointments\\.local",
+      "projectPath": "C:\\Users\\anama\\Desktop\\RPA-AsistentProgramari_ServiceAuto\\RPA_AutoServiceAppointments\\AutoServiceAppointments\\.local",
+      "packagesPath": "C:\\Users\\anama\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anama\\Desktop\\RPA-AsistentProgramari_ServiceAuto\\RPA_AutoServiceAppointments\\AutoServiceAppointments\\.local",
       "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26338,7 +26338,7 @@
             "version": "[2.3.1, 2.3.1]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPathPlatform\\Studio\\26.0.182-cloud.21895\\PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\anama\\AppData\\Local\\Programs\\UiPathPlatform\\Studio\\26.0.182-cloud.21895\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

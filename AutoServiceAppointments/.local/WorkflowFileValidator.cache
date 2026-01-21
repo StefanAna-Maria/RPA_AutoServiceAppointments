@@ -9,4 +9,16 @@ Workflows/06_GeneratePDF.xaml|639045377823008019
 Workflows/05_SaveToExcel.xaml|639045377823008019
 Workflows/07_CreateCalendarEvent.xaml|639045377823008019
 Workflows/03_ParseEmail.xaml|639045377822981647
-Main.xaml|639045377822939304
+Main.xaml|639046027956276742
+Workflows/04_AutomatePDF.xaml|639045958299046023
+Workflows/11_GetClientsFromExcel.xaml|639045998454669514
+Workflows/10_OffersCampaign.xaml|639046016901149270
+Workflows/00_ResetRowVars.xaml|639045941180257508
+Workflows/01_Init.xaml|639045941180267538
+Workflows/03_ParseEmail.xaml|639045941180277587
+Workflows/05_SaveToExcel.xaml|639045941180287587
+Workflows/02_GetEmails.xaml|639046018910933590
+Workflows/06_GeneratePDF.xaml|639045941180297590
+Workflows/07_CreateCalendarEvent.xaml|639046023914964519
+Workflows/09_ScrapeAvailableSlots.xaml|639046020991328059
+Workflows/99_ErrorHandler.xaml|639045941180327971

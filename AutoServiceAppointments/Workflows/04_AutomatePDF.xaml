@@ -1,5 +1,8 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="_04_AutomatePDF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uisape="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="out_TxtPath" Type="OutArgument(x:String)" />
+    <x:Property Name="out_SelectedPdfPath" Type="OutArgument(x:String)" />
+    <x:Property Name="out_OcrText" Type="OutArgument(x:String)" />
     <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
     <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
     <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
@@ -279,7 +282,7 @@
       <AssemblyReference>Microsoft.CodeAnalysis.Features</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="773.2,1710.4" sap2010:WorkflowViewState.IdRef="Sequence_107">
+  <Sequence sap:VirtualizedContainerService.HintSize="901,4782" sap2010:WorkflowViewState.IdRef="Sequence_107">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="__outputFileName__as_System_Activities_OutArgument_System_String___as_System_Activities_OutArgument_System_String_" />
       <Variable x:TypeArguments="x:String" Name="__outputFilePath__as_System_Activities_OutArgument_System_String___as_System_Activities_OutArgument_System_String_" />
@@ -309,47 +312,102 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="518.4,78.4" sap2010:WorkflowViewState.IdRef="ManualTrigger_5" />
-    <TryCatch DisplayName="Gestionarea erorilor pentru activitățile principale" sap:VirtualizedContainerService.HintSize="518.4,1608.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="901,79" sap2010:WorkflowViewState.IdRef="ManualTrigger_5" />
+    <TryCatch DisplayName="Gestionarea erorilor pentru activitățile principale" sap:VirtualizedContainerService.HintSize="901,4164" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="516.8,1251.2" sap2010:WorkflowViewState.IdRef="Sequence_105">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="899,3806" sap2010:WorkflowViewState.IdRef="Sequence_105">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="483.2,1187.2" sap2010:WorkflowViewState.IdRef="Sequence_104">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="865,3742" sap2010:WorkflowViewState.IdRef="Sequence_104">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,1096" sap2010:WorkflowViewState.IdRef="Sequence_103">
+            <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="831,3655" sap2010:WorkflowViewState.IdRef="Sequence_103">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:SelectFile InitialDirectory="{x:Null}" Multiselect="{x:Null}" SelectedFiles="{x:Null}" DisplayName="Selectează fișierul PDF de pe computer." Filter="&quot;PDF files (*.pdf)|*.pdf&quot;" sap:VirtualizedContainerService.HintSize="416,228.8" sap2010:WorkflowViewState.IdRef="SelectFile_6" SelectedFile="[selectedFilePath]" />
-              <ui:PathExists DisplayName="Obține resursa pentru fișierul PDF selectat." Exists="[pdfFileExists]" sap:VirtualizedContainerService.HintSize="416,177.6" sap2010:WorkflowViewState.IdRef="PathExists_8" Path="[selectedFilePath]" PathType="File" Resource="[pdfResource]" />
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,126.4" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[selectedFilePath]" />
-              <If Condition="[pdfFileExists]" DisplayName="Extrage text din fișierul PDF selectat." sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="If_21">
+              <ui:SelectFile InitialDirectory="{x:Null}" Multiselect="{x:Null}" SelectedFiles="{x:Null}" DisplayName="Selectează fișierul PDF de pe computer." Filter="&quot;PDF files (*.pdf)|*.pdf&quot;" sap:VirtualizedContainerService.HintSize="797,230" sap2010:WorkflowViewState.IdRef="SelectFile_6" SelectedFile="[selectedFilePath]" />
+              <ui:PathExists DisplayName="Obține resursa pentru fișierul PDF selectat." Exists="[pdfFileExists]" sap:VirtualizedContainerService.HintSize="797,178" sap2010:WorkflowViewState.IdRef="PathExists_8" Path="[selectedFilePath]" PathType="File" Resource="[pdfResource]" />
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="797,127" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[selectedFilePath]" />
+              <If Condition="[pdfFileExists]" DisplayName="Extrage text din fișierul PDF selectat." sap:VirtualizedContainerService.HintSize="797,1657" sap2010:WorkflowViewState.IdRef="If_21">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_94">
-                    <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_93">
-                      <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_92">
-                        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_91">
-                          <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_90">
-                            <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_89">
-                              <uisape:ExtractPDFText FilePassword="{x:Null}" OcrEngine="{x:Null}" Text="{x:Null}" ApplyOcr="False" DisplayName="Încearcă să extragi text direct (pentru PDF-uri native)." sap2010:WorkflowViewState.IdRef="ExtractPDFText_14" PdfFile="[pdfResource]" />
-                              <If Condition="[String.IsNullOrEmpty(extractedText)]" DisplayName="Dacă extracția directă nu produce text, utilizează OCR (pentru PDF-uri bazate pe imagini)." sap2010:WorkflowViewState.IdRef="If_20">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="795,1420" sap2010:WorkflowViewState.IdRef="Sequence_94">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="761,1356" sap2010:WorkflowViewState.IdRef="Sequence_93">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="727,1265" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="693,1174" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="659,1083" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="625,992" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uisape:ExtractPDFText FilePassword="{x:Null}" OcrEngine="{x:Null}" Text="{x:Null}" ApplyOcr="False" DisplayName="Încearcă să extragi text direct (pentru PDF-uri native)." sap:VirtualizedContainerService.HintSize="591,127" sap2010:WorkflowViewState.IdRef="ExtractPDFText_14" PdfFile="[pdfResource]" />
+                              <If Condition="[String.IsNullOrEmpty(extractedText)]" DisplayName="Dacă extracția directă nu produce text, utilizează OCR (pentru PDF-uri bazate pe imagini)." sap:VirtualizedContainerService.HintSize="591,774" sap2010:WorkflowViewState.IdRef="If_20">
                                 <If.Then>
-                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_87">
-                                    <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_86">
-                                      <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_85">
-                                        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_84">
-                                          <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_83">
-                                            <uisape:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extrage text folosind OCR." sap2010:WorkflowViewState.IdRef="ExtractPDFText_15" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[pdfResource]" Text="[extractedText]" />
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="589,546" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="555,482" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,391" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,300" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,209" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uisape:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extrage text folosind OCR." sap:VirtualizedContainerService.HintSize="416,118" sap2010:WorkflowViewState.IdRef="ExtractPDFText_15" OcrEngine="UIPATH_DOCUMENT_OCR" PdfFile="[pdfResource]" Text="[extractedText]" />
                                           </Sequence>
                                         </Sequence>
                                       </Sequence>
@@ -357,7 +415,13 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_88" />
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="589,94" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
                                 </If.Else>
                               </If>
                             </Sequence>
@@ -368,19 +432,55 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap2010:WorkflowViewState.IdRef="Sequence_95" />
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="795,94" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
                 </If.Else>
               </If>
               <ui:SelectFolder DisplayName="Selectează folderul de ieșire de pe computer." sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="SelectFolder_6" SelectedFolder="[outputFolderPath]" />
-              <If Condition="[Not String.IsNullOrEmpty(outputFolderPath)]" DisplayName="Salvează textul extras într-un fișier text nou în folderul de ieșire selectat." sap:VirtualizedContainerService.HintSize="416,173.6" sap2010:WorkflowViewState.IdRef="If_22">
+              <If Condition="[Not String.IsNullOrEmpty(outputFolderPath)]" DisplayName="Salvează textul extras într-un fișier text nou în folderul de ieșire selectat." sap:VirtualizedContainerService.HintSize="797,1260" sap2010:WorkflowViewState.IdRef="If_22">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_101">
-                    <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_100">
-                      <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_99">
-                        <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_98">
-                          <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_97">
-                            <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_96">
-                              <Assign DisplayName="Obține numele fișierului original pentru a crea numele fișierului de ieșire." sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,1040" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="586,976" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="552,889" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="518,802" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,711" sap2010:WorkflowViewState.IdRef="Sequence_97">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,620" sap2010:WorkflowViewState.IdRef="Sequence_96">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Obține numele fișierului original pentru a crea numele fișierului de ieșire." sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_13">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[outputFileName]</OutArgument>
                                 </Assign.To>
@@ -388,7 +488,7 @@
                                   <InArgument x:TypeArguments="x:String">[Path.GetFileNameWithoutExtension(selectedFilePath) &amp; "_extracted.txt"]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Combină folderul și numele fișierului pentru calea completă de ieșire." sap2010:WorkflowViewState.IdRef="Assign_14">
+                              <Assign DisplayName="Combină folderul și numele fișierului pentru calea completă de ieșire." sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_14">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[outputFilePath]</OutArgument>
                                 </Assign.To>
@@ -396,7 +496,7 @@
                                   <InArgument x:TypeArguments="x:String">[Path.Combine(outputFolderPath, outputFileName)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Scrie textul extras în fișierul de ieșire." FileName="[outputFilePath]" sap2010:WorkflowViewState.IdRef="WriteTextFile_6" Text="[extractedText]" />
+                              <ui:WriteTextFile File="{x:Null}" Output="{x:Null}" DisplayName="Scrie textul extras în fișierul de ieșire." FileName="[outputFilePath]" sap:VirtualizedContainerService.HintSize="416,171" sap2010:WorkflowViewState.IdRef="WriteTextFile_6" Text="[extractedText]" />
                             </Sequence>
                           </Sequence>
                         </Sequence>
@@ -405,7 +505,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap2010:WorkflowViewState.IdRef="Sequence_102" />
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="620,90" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
                 </If.Else>
               </If>
             </Sequence>
@@ -418,7 +524,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="516.8,94.4" sap2010:WorkflowViewState.IdRef="Sequence_106">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="899,90" sap2010:WorkflowViewState.IdRef="Sequence_106">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -429,7 +535,7 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="516.8,94.4" sap2010:WorkflowViewState.IdRef="Sequence_108">
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="899,90" sap2010:WorkflowViewState.IdRef="Sequence_108">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -438,5 +544,29 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
+    <Assign sap:VirtualizedContainerService.HintSize="901,175" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_OcrText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[ocrExtractedText]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="901,175" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_SelectedPdfPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[selectedFilePath]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="901,166" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_TxtPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[outputFilePath]</InArgument>
+      </Assign.Value>
+    </Assign>
   </Sequence>
 </Activity>

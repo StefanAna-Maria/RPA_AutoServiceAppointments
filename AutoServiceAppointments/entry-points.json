@@ -68,6 +68,20 @@
           }
         },
         "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_TxtPath": {
+            "type": "string"
+          },
+          "out_SelectedPdfPath": {
+            "type": "string"
+          },
+          "out_OcrText": {
+            "type": "string"
+          }
+        }
       }
     },
     {
