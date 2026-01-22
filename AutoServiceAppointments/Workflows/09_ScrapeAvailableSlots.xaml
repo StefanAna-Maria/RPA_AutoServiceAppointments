@@ -47,6 +47,8 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -122,9 +124,10 @@
       <AssemblyReference>Studio.Generated.TypedDataTable1</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_08_ScrapeAvailableSlots" sap:VirtualizedContainerService.HintSize="673,1584" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_08_ScrapeAvailableSlots" sap:VirtualizedContainerService.HintSize="860.6181818181819,2349.3818181818183" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtSlots" />
       <Variable x:TypeArguments="x:String" Name="fileUrl" />
@@ -137,7 +140,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[relPath]</OutArgument>
       </Assign.To>
@@ -147,8 +150,8 @@
    "Data\AvailableSlots.html")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Slots_Url from config = &quot; + relPath]" />
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Slots_Url from config = &quot; + relPath]" />
+    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[absPath]</OutArgument>
       </Assign.To>
@@ -156,7 +159,7 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.CurrentDirectory, relPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="487.8545454545455,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[fileUrl]</OutArgument>
       </Assign.To>
@@ -164,40 +167,65 @@
         <InArgument x:TypeArguments="x:String">[New Uri(absPath).AbsoluteUri]</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Chrome Service Auto - Sloturi disponibile(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,861" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="{x:Null}" InteractionMode="DebuggerApi" IsIncognito="{x:Null}" OpenMode="{x:Null}" OutUiElement="{x:Null}" ScopeGuid="f4072a4f-98c7-4ab2-9080-c659996e5564" Timeout="{x:Null}" UserDataFolderMode="{x:Null}" UserDataFolderPath="{x:Null}" Version="V2" WebDriverMode="{x:Null}">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Service Auto - Sloturi disponibile(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="487.8545454545455,1621.527272727273" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="f4072a4f-98c7-4ab2-9080-c659996e5564" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,739" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486.1090909090909,1427.7818181818184" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenPages="{x:Null}" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Data' ReferenceIdx='0' Name='Data'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='OraStart' ReferenceIdx='1' Name='OraStart'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='OraEnd' ReferenceIdx='2' Name='OraEnd'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Status' ReferenceIdx='3' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Data' attr='fulltext' /&gt;&lt;column name='OraStart' attr='fulltext' /&gt;&lt;column name='OraEnd' attr='fulltext' /&gt;&lt;column name='Status' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,147" sap2010:WorkflowViewState.IdRef="NExtractData_1" InUiElement="{x:Null}" InteractionMode="{x:Null}" LimitExtractionTo="None" MaximumResults="0" OutUiElement="{x:Null}" ScopeIdentifier="f4072a4f-98c7-4ab2-9080-c659996e5564" Timeout="{x:Null}" Version="V5">
-              <uix:NExtractData.Target>
-                <uix:TargetAnchorable BrowserURL="file:///C:/Users/anama/Desktop/HoriaBranchu/RPA_AutoServiceAppointments/AutoServiceAppointments/Data/AvailableSlots.html" DesignTimeRectangle="32, 231, 590, 316" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='slots' tag='TABLE' /&gt;" Guid="c441729e-87d2-4259-9a39-9808e2ef9e41" InformativeScreenshot="5080c5626777edeb74e63446180abb04.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Service Auto - Sloturi disponibile' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NExtractData.Target>
-            </uix:NExtractData>
-            <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_4">
-              <Assign.To>
-                <OutArgument x:TypeArguments="sd:DataTable">[dtSlots]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Slots scraped rows = &quot; + dtSlots.Rows.Count.ToString + &quot; / cols = &quot; + dtSlots.Columns.Count.ToString]" />
-            <Assign sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_5">
-              <Assign.To>
-                <OutArgument x:TypeArguments="sd:DataTable">[out_dtSlots]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="sd:DataTable">[dtSlots]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <uix:NCheckState DisplayName="Check App State 'Chrome Legacy Window'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452.0727272727273,1367.5636363636365" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f4072a4f-98c7-4ab2-9080-c659996e5564" Timeout="10" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450.32727272727277,726.9818181818182" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Data' ReferenceIdx='0' Name='Data'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='OraStart' ReferenceIdx='1' Name='OraStart'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='OraEnd' ReferenceIdx='2' Name='OraEnd'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Status' ReferenceIdx='3' Name='Status'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Data' attr='fulltext' /&gt;&lt;column name='OraStart' attr='fulltext' /&gt;&lt;column name='OraEnd' attr='fulltext' /&gt;&lt;column name='Status' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416.2909090909091,147.4909090909091" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f4072a4f-98c7-4ab2-9080-c659996e5564" Version="V5">
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable BrowserURL="file:///C:/Users/anama/Desktop/HoriaBranchu/RPA_AutoServiceAppointments/AutoServiceAppointments/Data/AvailableSlots.html" DesignTimeRectangle="32, 231, 590, 316" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='slots' tag='TABLE' /&gt;" Guid="c441729e-87d2-4259-9a39-9808e2ef9e41" InformativeScreenshot="5080c5626777edeb74e63446180abb04.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Service Auto - Sloturi disponibile' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,176.2909090909091" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[dtSlots]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable">[ExtractDataTable]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416.2909090909091,176.2909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Slots scraped rows = &quot; + dtSlots.Rows.Count.ToString + &quot; / cols = &quot; + dtSlots.Columns.Count.ToString]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="416.2909090909091,166.6909090909091" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[out_dtSlots]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable">[dtSlots]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450.32727272727277,355.20000000000005" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416.2909090909091,176.2909090909091" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Nu s-a incarcat pagina cu sloturi sau tabelul nu a fost gasit.&quot;]" />
+                  <Throw Exception="[New UiPath.Core.BusinessRuleException(&quot;Slots page not loaded / table not found&quot;)]" sap:VirtualizedContainerService.HintSize="416.2909090909091,118.6909090909091" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="" ContentHash="-Vxo1Djh-E6n3fXezEX3Cw" DesignTimeRectangle="9, 168, 1921, 868" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Service Auto - Sloturi disponibile' cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;" Guid="740d45cd-472a-4487-ae12-4c48e306ec8e" InformativeScreenshot="8fce5ca32d905787b859baf0320750a5.png" Reference="hRGZvbx-QUqDSvuFD_-Ygg/R8I-a_rw8U-y67db8ctoPQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Service Auto - Sloturi disponibile - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -209,7 +237,7 @@
         </ActivityFunc>
       </uix:NApplicationCard.OCREngine>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-1928, 0, 976, 521" BrowserType="Chrome" ContentHash="p9LKi94FZU2QkGUOn0EkJg" IconBase64="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" InformativeScreenshot="623830a9a4b76117d4acbb396f56f8bb.jpg" Reference="hRGZvbx-QUqDSvuFD_-Ygg/zGd4MYRtpUSVX0sYKgt_2A" Selector="&lt;html app='chrome.exe' title='Service Auto - Sloturi disponibile' /&gt;" Url="[fileUrl]" Version="V2">
+        <uix:TargetApp Area="-1928, 0, 976, 521" BrowserType="Chrome" ContentHash="tCCDQ27m7US72kBJjPkoow" IconBase64="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" InformativeScreenshot="623830a9a4b76117d4acbb396f56f8bb.jpg" Reference="hRGZvbx-QUqDSvuFD_-Ygg/KmX4d17Q3kW6yiI74-Pz9w" Selector="&lt;html app='chrome.exe' title='Service Auto - Sloturi disponibile' /&gt;" Url="[fileUrl]" Version="V2">
           <uix:TargetApp.Arguments>
             <InArgument x:TypeArguments="x:String" />
           </uix:TargetApp.Arguments>
